@@ -3,12 +3,16 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define r = Character("Rachel")
+define mo = Character("Monique")
+define c = Character("Cliff")
+define ce = Character("Celine")
+define m = Character("Mia")
 
 
 # The game starts here.
 
-label start:
+label rachel_bedroom_start:
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the

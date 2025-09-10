@@ -1,0 +1,44 @@
+# This is so files that are not that important gets ignored and not pushed to the repository
+# Ren'Py generated files and directories
+game/saves/
+game/log.txt
+game/traceback.txt
+game/errors.txt
+game/persistent/
+game/options.rpyc
+game/*.rpyc
+game/*.rpymc
+game/*.pyc
+game/*.pyo
+game/*.bak
+game/*.old
+game/*.tmp
+game/*.swp
+
+# Build artifacts
+build/
+launcher/
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.DS_Store
+Thumbs.db
+
+# Operating System specific files
+.AppleDouble
+.LSOverride
+.Trashes
+desktop.ini
+
+# Other common files to ignore
+*.log
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.exe
+*.dmg
+*.app

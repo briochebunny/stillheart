@@ -9,10 +9,14 @@ define c = Character("Cliff")
 define ce = Character("Celine")
 define m = Character("Mia")
 
+transform character_down:
+    xalign 0.5
+    yalign -0.3
+
 
 # The game starts here.
 label start:
-    "Your game starts here."
+    "Your game starts he- ...Wait, what is this?"
 
 label rachel_bedroom_start:
 
@@ -20,19 +24,33 @@ label rachel_bedroom_start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg black
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    "Celine Dion,,,"
+
+    show celine temp at character_down with fade
 
     # These display lines of dialogue.
 
-    r "You've created a new Ren'Py game."
+    ce "W-Who's there?!"
 
-    r "Once you add a story, pictures, and music, you can release it to the world!"
+    ce "Wait... Where AM I?!?!?!?!?"
+
+    hide celine temp with fade
+
+    "In the Dark... Someone appears..."
+
+    show mia temp at character_down with dissolve
+
+    m "Play My Game."
+
+    hide mia temp with fade
+
+    "WHAT THE HEEEEEEELLLLLLLLL GOOKIIILLLLLEEEE"
 
     # This ends the game.
 

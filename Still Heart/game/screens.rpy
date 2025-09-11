@@ -120,7 +120,7 @@ screen say(who, what):
 init python:
     config.character_id_prefixes.append('namebox')
 
-style window is default
+style window is say_dialogue
 style say_label is default
 style say_dialogue is default
 style say_thought is say_dialogue
@@ -128,15 +128,17 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
+## The window that contains the textbox.
 
 style window:
     xalign 0.5
-    xfill True
-    yalign gui.textbox_yalign
+    xfill False
+    xsize 1100
+    yalign 0.95
     ysize gui.textbox_height
-
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-
+    ypadding 30
+    background Frame("gui/Textbox_Base_Frame_W_Heart.png", Borders(2, 2, 2, 2))
+    
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign

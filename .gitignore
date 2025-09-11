@@ -20,7 +20,7 @@ build/
 launcher/
 
 # IDE/Editor specific files
-.vscode/
+.vscode/settings.json
 .idea/
 *.sublime-project
 *.sublime-workspace

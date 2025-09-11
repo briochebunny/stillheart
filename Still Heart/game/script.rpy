@@ -11,6 +11,8 @@ define m = Character("Mia")
 
 
 # The game starts here.
+label start:
+    "Your game starts here."
 
 label rachel_bedroom_start:
 
@@ -28,9 +30,9 @@ label rachel_bedroom_start:
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    r "You've created a new Ren'Py game."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    r "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 

@@ -18,13 +18,13 @@ transform character_down:
 label start:
     "Your game starts he- ...Wait, what is this?"
 
-label rachel_bedroom_start:
+label rachels_bedroom_start:
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg black
+    show bg rachelsbedroom
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images

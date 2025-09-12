@@ -3,11 +3,11 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define r = Character("Rachel")
+define ra = Character("Rachel")
 define mo = Character("Monique")
-define c = Character("Cliff")
+define cl = Character("Cliff")
 define ce = Character("Celine")
-define m = Character("Mia")
+define mi = Character("Mia")
 
 transform character_down:
     xalign 0.5
@@ -46,11 +46,33 @@ label rachels_bedroom_start:
 
     show mia temp at character_down with dissolve
 
-    m "Play My Game."
+    mi "Play My Game."
 
     hide mia temp with fade
 
     "WHAT THE HEEEEEEELLLLLLLLL GOOKIIILLLLLEEEE"
+
+    show cl costdefault at right 
+
+    cl "hey guys im cliff"
+
+    show ra default at left 
+
+    ra "AW HELL NAW YO ASS TWEAKIN JIGSAW"
+
+    show celine temp at center
+
+    ce "actually mia kill these guys"
+
+    hide celine temp
+
+    show mia temp 
+
+    mi "yes vegeta"
+
+    scene bg rachelsbedroom
+
+    "and they all died yay the end thnaks for playing :333"
 
     # This ends the game.
 

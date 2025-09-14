@@ -140,19 +140,19 @@ style window:
     background Frame("gui/Textbox_Base_Frame_W_Heart.png", Borders(2, 2, 2, 2))
     
 style namebox:
-    xpos gui.name_xpos
+    xpos 80  # Pixels from left edge of screen
+    ypos -110 # Pixels from top of screen
     xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
+    xsize 290  # ypos gui.name_ypos
+    ysize 70
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("gui/Textbox_Header_Frame.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
-    yalign 0.5
+    xalign 0.5  
+    yalign 0.5 
 
 style say_dialogue:
     properties gui.text_properties("dialogue")

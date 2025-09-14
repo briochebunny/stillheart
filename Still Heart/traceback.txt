@@ -1,11 +1,11 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "game/screens.rpy", line 135, in <module>
-    xsize gui.textbox_width
-AttributeError: 'StoreModule' object has no attribute 'textbox_width'
+While running game code:
+  File "game/script.rpy", line 41, in script
+    ce "Wait... Where AM I?!?!?!?!?"
+  File "game/script.rpy", line 41, in script
+    ce "Wait... Where AM I?!?!?!?!?"
+Exception: Could not find font '.ttf'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -14,27 +14,78 @@ Full traceback:
     renpy.main.main()
   File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
     run(restart)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 75, in run
-    renpy.translation.init_translation()
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 702, in init_translation
-    renpy.store._init_language() # type: ignore
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 796, in change_language
-    new_change_language(tl, language)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 748, in new_change_language
-    i.apply()
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2806, in apply
-    value = renpy.python.py_eval(expr)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 135, in <module>
-    xsize gui.textbox_width
-AttributeError: 'StoreModule' object has no attribute 'textbox_width'
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/script.rpy", line 41, in script
+    ce "Wait... Where AM I?!?!?!?!?"
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/script.rpy", line 41, in script
+    ce "Wait... Where AM I?!?!?!?!?"
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
+    Say.execute(self)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 621, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\character.py", line 1455, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\character.py", line 1106, in do_display
+    display_say(who,
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\character.py", line 803, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2879, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 1381, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\screen.py", line 752, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1457, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 2600, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 767, in __init__
+    glyphs = ts.glyphs(s, self)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 340, in glyphs
+    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample, self.shaper, self.instance, self.axis)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\text\font.py", line 745, in get_font
+    face = load_face(fn, shaper)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\text\font.py", line 673, in load_face
+    raise Exception("Could not find font {0!r}.".format(orig_fn))
+Exception: Could not find font '.ttf'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 Still Heart 1.0
-Thu Sep 11 18:21:00 2025
+Sun Sep 14 22:08:20 2025

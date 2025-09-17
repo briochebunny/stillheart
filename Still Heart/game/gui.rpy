@@ -56,7 +56,7 @@ define gui.interface_text_color = '#ffffff'
 
 
 ## Fonts and Font Sizes ########################################################
-
+# Arthur was here (fonts changed)
 ## The font used for in-game text.
 define gui.text_font = "./fonts/Coffee Mood.ttf"
 

@@ -129,7 +129,7 @@ style namebox is default
 style namebox_label is say_label
 
 ## The window that contains the textbox.
-
+# Arthur's Custom Textbox
 style window:
     xalign 0.5
     xfill False
@@ -237,6 +237,7 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
+# Arthur's Custom Menu
 screen quick_menu():
 
     ## Ensure this appears on top of other screens.

@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 265: keyword argument 'at' appears more than once in a imagebutton statement.
+    hover Transform("gui/StillHeart_Buttons/Textbox_History_Button_Hover.png", zoom=0.9) at button_transition
+                                                                                           ^
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Wed Sep 17 09:44:54 2025

@@ -248,16 +248,53 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.5
-            yalign 1.0
+            yalign 0.98
+            spacing 5
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            imagebutton: # history 1
+                idle Transform("gui/StillHeart_Buttons/Textbox_History_Button.png", zoom=0.9)
+                hover Transform("gui/StillHeart_Buttons/Textbox_History_Button_Hover.png", zoom=0.9) 
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_History_Button_Clicked.png", zoom=0.9)
+                action ShowMenu('history')
+
+            imagebutton: #skip 2
+                idle Transform("gui/StillHeart_Buttons/Textbox_Skip_Button.png", zoom=0.9)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Skip_Button_Hover.png", zoom=0.9)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Skip_Button_Clicked.png", zoom=0.9)
+                action Skip() alternate Skip(fast=True, confirm=True)
+                
+            imagebutton: # auto 3
+                idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button.png", zoom=0.9)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Hover.png", zoom=0.9)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Clicked.png", zoom=0.85)
+                action Preference("auto-forward", "toggle")
+            
+            imagebutton: # save 4
+                idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button.png", zoom=0.9)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Hover-1.png", zoom=0.9)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Clicked.png", zoom=0.9)
+                action ShowMenu("save")
+                
+            imagebutton: # load 5
+                idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button.png", zoom=0.9)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Hover.png", zoom=0.9)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Clicked.png", zoom=0.9)
+                action QuickLoad()
+                
+            imagebutton: # settings/pref 6
+                idle Transform("gui/StillHeart_Buttons/Textbox_Setting_Button.png", zoom=0.9)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Setting_Button_Hover.png", zoom=0.9)
+                action ShowMenu("preferences")
+
+            # THESE ARE DEFAULT TEXT BUTTONS, we're using images -art
+            # textbutton _("Back") action Rollback()
+            # textbutton _("History") action ShowMenu('history')
+            # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("Auto") action Preference("auto-forward", "toggle")
+            # textbutton _("Save") action ShowMenu('save')
+            # textbutton _("Q.Save") action QuickSave()
+            # textbutton _("Q.Load") action QuickLoad()
+            # textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

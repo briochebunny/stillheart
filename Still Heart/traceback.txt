@@ -1,11 +1,13 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
+While processing the background property of style game_menu_content_frame:
   File "renpy/common/00start.rpy", line 83, in _init_language
     renpy.change_language(language)
-  File "game/screens.rpy", line 25, in <module>
-    properties gui.show_button_game_menu("interface")
-AttributeError: 'StoreModule' object has no attribute 'show_button_game_menu'
+  File "renpy/common/00stylepreferences.rpy", line 127, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 99, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: An empty string cannot be used as a displayable.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -20,21 +22,22 @@ Full traceback:
     renpy.store._init_language() # type: ignore
   File "renpy/common/00start.rpy", line 83, in _init_language
     renpy.change_language(language)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 796, in change_language
-    new_change_language(tl, language)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 748, in new_change_language
-    i.apply()
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2806, in apply
-    value = renpy.python.py_eval(expr)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 25, in <module>
-    properties gui.show_button_game_menu("interface")
-AttributeError: 'StoreModule' object has no attribute 'show_button_game_menu'
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 801, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 127, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 99, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 803, in renpy.style.rebuild
+  File "style.pyx", line 796, in renpy.style.build_styles
+  File "style.pyx", line 717, in renpy.style.build_style
+  File "style.pyx", line 714, in renpy.style.build_style
+  File "gen3-static/style_functions.pyx", line 111, in style_functions.background_property
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\easy.py", line 71, in displayable_or_none
+    raise Exception("An empty string cannot be used as a displayable.")
+Exception: An empty string cannot be used as a displayable.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 Still Heart 1.0
-Wed Sep 17 09:23:42 2025
+Fri Sep 19 14:54:36 2025

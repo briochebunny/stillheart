@@ -137,7 +137,7 @@ style window:
     yalign 0.95
     ysize gui.textbox_height
     ypadding 30
-    background Frame("gui/Textbox_Base_Frame_W_Heart.png", Borders(2, 2, 2, 2))
+    background Frame("gui/StillHeart_TextBox/Textbox_Base_Frame_W_Heart.png", Borders(2, 2, 2, 2))
     
 style namebox:
     xpos 80  # Pixels from left edge of screen
@@ -146,7 +146,7 @@ style namebox:
     xsize 290  # ypos gui.name_ypos
     ysize 70
 
-    background Frame("gui/Textbox_Header_Frame.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("gui/StillHeart_TextBox/Textbox_Header_Frame.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -344,9 +344,9 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -522,7 +522,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
-
+# General Settings Menu -Arthur
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
@@ -540,16 +540,26 @@ style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
 
-    background "gui/overlay/game_menu.png"
+    background "gui/StillHeart_Menu/Settings_BG.png"
 
 style game_menu_navigation_frame:
-    xsize 280
-    yfill True
+    xsize 270              # Matched it with the layout pls dont change
+    yfill True             
+    background Frame(
+        "gui/StillHeart_Menu/Settings_Menu_Buttons_Base_W_Heart.png",
+        10, 10 
+    )
+    xalign 0.0
+    xoffset 10   # a little to the left        
+    yalign 0.5 
+    yoffset -130  # this is so it sticks to the top of the screen         
+
 
 style game_menu_content_frame:
     left_margin 40
     right_margin 20
     top_margin 10
+
 
 style game_menu_viewport:
     xsize 920
@@ -765,6 +775,7 @@ style slot_button_text:
 ## themselves.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
+
 
 screen preferences():
 

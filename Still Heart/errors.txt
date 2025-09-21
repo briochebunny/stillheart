@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/images.rpy", line 1: Unexpected indentation at start of file.
+File "game/screens.rpy", line 998: The has statement may not be given after a child has been supplied.
+    has fixed:
+       ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Sep 21 23:17:06 2025
+Mon Sep 22 00:30:35 2025

@@ -349,7 +349,7 @@ screen navigation():
 
         else:
 
-            #textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history")
 
             #textbutton _("Save") action ShowMenu("save")
 
@@ -452,11 +452,17 @@ style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
+#navigation for main menu -Arthur
 style main_menu_frame:
-    xsize 270
-    yfill True
-
-    background "gui/overlay/main_menu.png"
+    xsize 270   
+    ysize 570           # MAIN MENU NAVBAR IS DIFFERENT THAN GAME MENU DONT CHANGE THESE           
+    background Frame(
+        "gui/StillHeart_Menu/Settings_Menu_Buttons_Base_W_Heart.png", 10, 10 
+    )
+    xalign 0.0
+    xoffset 10      
+    yalign 0.5 
+    yoffset -85 
 
 style main_menu_vbox:
     xalign 1.0
@@ -631,13 +637,13 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"): #emptied the string so theres no title -A
 
         style_prefix "about"
 
         vbox:
 
-            label "[config.name!t]"
+            # label "[config.name!t]"   
             text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
@@ -668,14 +674,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_(""))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_(""))
 
 
 screen file_slots(title):
@@ -813,7 +819,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"):
 
         vbox:
 
@@ -972,12 +978,13 @@ style slider_vbox:
 screen history():
 
     tag menu
+    
 
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    use game_menu(_(""), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
 
         style_prefix "history"
 
@@ -1026,6 +1033,7 @@ style history_window:
     xfill True
     ysize gui.history_height
 
+
 style history_name:
     xpos gui.history_name_xpos
     xanchor gui.history_name_xalign
@@ -1064,7 +1072,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"):
 
         style_prefix "help"
 

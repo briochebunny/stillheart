@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -108,6 +107,8 @@ screen say(who, what):
                 text who id "who"
 
         text what id "what"
+    #adding ctc here as its own item
+        add "ctc_anchored" id "ctc"
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -137,7 +138,7 @@ style window:
     yalign 0.95
     ysize gui.textbox_height
     ypadding 30
-    background Frame("gui/StillHeart_TextBox/Textbox_Base_Frame_W_Heart.png", Borders(2, 2, 2, 2))
+    background Frame("gui/StillHeart_TextBox/Textbox_Base_Frame.png", Borders(2, 2, 2, 2))
     
 style namebox:
     xpos 80  # Pixels from left edge of screen
@@ -162,6 +163,8 @@ style say_dialogue:
     ypos gui.dialogue_ypos
 
     adjust_spacing False
+
+
 
 ## Input screen ################################################################
 ##
@@ -253,38 +256,38 @@ screen quick_menu():
             spacing 5
 
             imagebutton: # history 1
-                idle Transform("gui/StillHeart_Buttons/Textbox_History_Button.png", zoom=0.9)
-                hover Transform("gui/StillHeart_Buttons/Textbox_History_Button_Hover.png", zoom=0.9) 
-                selected_idle Transform("gui/StillHeart_Buttons/Textbox_History_Button_Clicked.png", zoom=0.9)
+                idle Transform("gui/StillHeart_Buttons/Textbox_History_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_History_Button_Hover.png", zoom=0.7) 
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_History_Button_Clicked.png", zoom=0.7)
                 action ShowMenu('history')
 
             imagebutton: #skip 2
-                idle Transform("gui/StillHeart_Buttons/Textbox_Skip_Button.png", zoom=0.9)
-                hover Transform("gui/StillHeart_Buttons/Textbox_Skip_Button_Hover.png", zoom=0.9)
-                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Skip_Button_Clicked.png", zoom=0.9)
+                idle Transform("gui/StillHeart_Buttons/Textbox_Skip_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Skip_Button_Hover.png", zoom=0.7)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Skip_Button_Clicked.png", zoom=0.7)
                 action Skip() alternate Skip(fast=True, confirm=True)
                 
             imagebutton: # auto 3
-                idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button.png", zoom=0.9)
-                hover Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Hover.png", zoom=0.9)
+                idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Hover.png", zoom=0.7)
                 selected_idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Clicked.png", zoom=0.85)
                 action Preference("auto-forward", "toggle")
             
             imagebutton: # save 4
-                idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button.png", zoom=0.9)
-                hover Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Hover-1.png", zoom=0.9)
-                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Clicked.png", zoom=0.9)
+                idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Hover-1.png", zoom=0.7)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Clicked.png", zoom=0.7)
                 action ShowMenu("save")
                 
             imagebutton: # load 5
-                idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button.png", zoom=0.9)
-                hover Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Hover.png", zoom=0.9)
-                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Clicked.png", zoom=0.9)
+                idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Hover.png", zoom=0.7)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Clicked.png", zoom=0.7)
                 action QuickLoad()
                 
             imagebutton: # settings/pref 6
-                idle Transform("gui/StillHeart_Buttons/Textbox_Setting_Button.png", zoom=0.9)
-                hover Transform("gui/StillHeart_Buttons/Textbox_Setting_Button_Hover.png", zoom=0.9)
+                idle Transform("gui/StillHeart_Buttons/Textbox_Setting_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Setting_Button_Hover.png", zoom=0.7)
                 action ShowMenu("preferences")
 
             # THESE ARE DEFAULT TEXT BUTTONS, we're using images -art
@@ -431,6 +434,7 @@ screen main_menu():
     use navigation
 
     if gui.show_name: #i set it to false in the options file - elaina
+                    #lowkey this is genius ty elly
 
         vbox:
             style "main_menu_vbox"

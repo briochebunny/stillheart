@@ -12,6 +12,8 @@ init offset = -2
 init python:
     gui.init(1280, 720)
 
+
+
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
 
@@ -61,7 +63,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "./fonts/Coffee Mood.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "./fonts/Mostly Ghostly.ttf"
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "./fonts/Coffee Mood.ttf"
@@ -70,7 +72,7 @@ define gui.interface_text_font = "./fonts/Coffee Mood.ttf"
 define gui.text_size = 30
 
 ## The size of character names.
-define gui.name_text_size = 30
+define gui.name_text_size = 40
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 22
@@ -88,6 +90,7 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
+##bg for menus -Arthur
 define gui.main_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
 define gui.game_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
 

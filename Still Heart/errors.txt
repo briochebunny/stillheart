@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 555: expected 'simple_expression' not found.
-    yoffset            
-                       ^
+File "game/screens.rpy", line 353: imagebutton expects a non-empty block.
+    imagebutton: 
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Fri Sep 19 15:20:37 2025
+Sat Sep 20 15:38:55 2025

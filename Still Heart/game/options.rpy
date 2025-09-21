@@ -18,7 +18,8 @@ define config.name = _("Still Heart")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+#define gui.show_name = True
+define gui.show_name = False #hides the game title from main menu - elaina
 
 
 ## The version of the game.
@@ -79,7 +80,7 @@ define config.exit_transition = dissolve
 
 ## Between screens of the game menu.
 
-define config.intra_transition = dissolve
+define config.intra_transition = None
 
 
 ## A transition that is used after a game has been loaded.

@@ -52,7 +52,7 @@ label rachels_bedroom_start:
 
     "WHAT THE HEEEEEEELLLLLLLLL GOOKIIILLLLLEEEE"
 
-    show cl costdefault at right 
+    show cl default1 at right 
 
     cl "hey guys im cliff"
 

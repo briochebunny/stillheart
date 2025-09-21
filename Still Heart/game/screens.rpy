@@ -324,29 +324,40 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+#changed textbuttons to imagebuttons and commented out the buttons that appear ingame -elaina
 screen navigation():
 
     vbox:
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.5
+        yalign 0.4
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            #textbutton _("Start") action Start()
+            imagebutton: #start
+                idle Transform("gui/StillHeart_Buttons/Settings_Start_Button.png")
+                hover Transform("gui/StillHeart_Buttons/Settings_Start_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/Settings_Start_Button_Clicked.png")
+                action Start()
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            #textbutton _("Save") action ShowMenu("save")
 
-            textbutton _("Load") action ShowMenu("load")
+            #textbutton _("Load") action ShowMenu("load")
+            imagebutton: #load
+                idle Transform("gui/StillHeart_Buttons/Settings_Load_Button.png")
+                hover Transform("gui/StillHeart_Buttons/Settings_Load_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/Settings_Load_Button_Clicked.png")
+                action ShowMenu("load")
 
-            textbutton _("Preferences") action ShowMenu("preferences")
+            #textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -356,18 +367,35 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+
+        #textbutton _("About") action ShowMenu("about")
+        imagebutton: #about
+            idle Transform("gui/StillHeart_Buttons/Settings_About_Button.png")
+            hover Transform("gui/StillHeart_Buttons/Settings_About_Button_Hover.png")
+            selected_idle Transform("gui/StillHeart_Buttons/Settings_About_Button_Clicked.png")
+            action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
+            imagebutton: #help
+                idle Transform("gui/StillHeart_Buttons/Settings_Help_Button.png")
+                hover Transform("gui/StillHeart_Buttons/Settings_Help_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/Settings_Help_Button_Clicked.png")
+                action ShowMenu("help")
+
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            #textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton: #quit
+                idle Transform("gui/StillHeart_Buttons/Settings_Quit_Button.png")
+                hover Transform("gui/StillHeart_Buttons/Settings_Quit_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/Settings_Quit_Button_Clicked.png")
+                action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -402,7 +430,7 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    if gui.show_name: #i set it to false in the options file - elaina
 
         vbox:
             style "main_menu_vbox"
@@ -421,7 +449,7 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 280
+    xsize 270
     yfill True
 
     background "gui/overlay/main_menu.png"
@@ -943,6 +971,7 @@ screen history():
 
     ## Avoid predicting this screen, as it can be very large.
     predict False
+
 
     use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
 

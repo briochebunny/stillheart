@@ -26,7 +26,7 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#9933ff'
+define gui.accent_color = '#DCD0F7' #changed to be the same color of the header text in the gui
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
@@ -88,8 +88,8 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
+define gui.game_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
 
 
 ## Dialogue ####################################################################
@@ -249,7 +249,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 25
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 10
@@ -309,9 +309,9 @@ define gui.frame_tile = False
 
 ## The height of horizontal bars, scrollbars, and sliders. The width of vertical
 ## bars, scrollbars, and sliders.
-define gui.bar_size = 25
-define gui.scrollbar_size = 12
-define gui.slider_size = 25
+define gui.bar_size = 4
+define gui.scrollbar_size = 55
+define gui.slider_size = 1
 
 ## True if bar images should be tiled. False if they should be linearly scaled.
 define gui.bar_tile = False
@@ -324,9 +324,9 @@ define gui.scrollbar_borders = Borders(4, 4, 4, 4)
 define gui.slider_borders = Borders(4, 4, 4, 4)
 
 ## Vertical borders.
-define gui.vbar_borders = Borders(4, 4, 4, 4)
-define gui.vscrollbar_borders = Borders(4, 4, 4, 4)
-define gui.vslider_borders = Borders(4, 4, 4, 4)
+define gui.vbar_borders = Borders(5, 5, 5, 5)
+define gui.vscrollbar_borders = Borders(5, 5, 5, 5)
+define gui.vslider_borders = Borders(1, 1, 1, 1)
 
 ## What to do with unscrollable scrollbars in the game menu. "hide" hides them,
 ## while None shows them.

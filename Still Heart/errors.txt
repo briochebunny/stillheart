@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 998: The has statement may not be given after a child has been supplied.
-    has fixed:
-       ^
+File "game/screens.rpy", line 506: textbutton expects a non-empty block.
+    textbutton _("Return"):
+                           ^
 
-Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Sep 22 00:30:35 2025
+Ren'Py Version: Ren'Py 8.4.1.25072401
+Tue Sep 23 14:09:35 2025

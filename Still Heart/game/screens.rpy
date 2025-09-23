@@ -349,7 +349,7 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
             #textbutton _("Save") action ShowMenu("save")
 
@@ -979,9 +979,10 @@ screen history():
 
     tag menu
     
-
     ## Avoid predicting this screen, as it can be very large.
     predict False
+
+    add "gui/StillHeart_Menu/History_Frame_BG.png"
 
 
     use game_menu(_(""), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):

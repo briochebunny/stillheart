@@ -92,7 +92,7 @@ define gui.title_text_size = 50
 ## The images used for the main and game menus.
 ##bg for menus -Arthur
 define gui.main_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
-define gui.game_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
+define gui.game_menu_background = "gui/game_menu.png"
 
 
 ## Dialogue ####################################################################
@@ -312,9 +312,9 @@ define gui.frame_tile = False
 
 ## The height of horizontal bars, scrollbars, and sliders. The width of vertical
 ## bars, scrollbars, and sliders.
-define gui.bar_size = 4
+define gui.bar_size = 15
 define gui.scrollbar_size = 55
-define gui.slider_size = 1
+define gui.slider_size = 15
 
 ## True if bar images should be tiled. False if they should be linearly scaled.
 define gui.bar_tile = False

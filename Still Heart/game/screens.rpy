@@ -55,9 +55,9 @@ style scrollbar:
     thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
-    xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    xsize 45
+    base_bar Frame("gui/StillHeart_Menu_Scrollbars/vertical_bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb "gui/StillHeart_Menu_Scrollbars/vertical_thumb.png"
 
 style slider:
     ysize gui.slider_size
@@ -349,7 +349,7 @@ screen navigation():
 
         else:
 
-            #textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history")
 
             #textbutton _("Save") action ShowMenu("save")
 
@@ -612,10 +612,11 @@ style game_menu_label:
     xpos 50
     ysize 120
 
-style game_menu_label_text:
-    size gui.title_text_size
-    color gui.accent_color
-    yalign 0.5
+# this hides the menu's titles -Arthur
+# style game_menu_label_text:
+#     size gui.title_text_size
+#     color gui.accent_color
+#     yalign 0.5
 
 style return_button:
     xpos gui.navigation_xpos
@@ -637,7 +638,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_(""), scroll="viewport"): #emptied the string so theres no title -A
+    use game_menu(_("About"), scroll="viewport"): #emptied the string so theres no title -A
 
         style_prefix "about"
 
@@ -814,18 +815,16 @@ style slot_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-
+#i messed around w this -Arthur
 screen preferences():
 
     tag menu
 
-    use game_menu(_(""), scroll="viewport"):
+    use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
 
             hbox:
-                box_wrap True
-
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
@@ -834,66 +833,55 @@ screen preferences():
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    vbox:
+                        style_prefix "check"
+                        label _("Skip")
+                        textbutton _("Unseen Text") action Preference("skip", "toggle")
+                        textbutton _("After Choices") action Preference("after choices", "toggle")
+                        textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
-
+            #sliders
             hbox:
                 style_prefix "slider"
-                box_wrap True
+                spacing 100
+                box_wrap False
 
                 vbox:
+                    spacing 15
 
                     label _("Text Speed")
-
                     bar value Preference("text speed")
 
                     label _("Auto-Forward Time")
-
                     bar value Preference("auto-forward time")
 
                 vbox:
+                    spacing 15
 
                     if config.has_music:
                         label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
+                        bar value Preference("music volume")
 
                     if config.has_sound:
-
                         label _("Sound Volume")
-
                         hbox:
                             bar value Preference("sound volume")
-
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
-
                     if config.has_voice:
                         label _("Voice Volume")
-
                         hbox:
                             bar value Preference("voice volume")
-
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
-
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+
 
 
 style pref_label is gui_label
@@ -978,42 +966,35 @@ style slider_vbox:
 screen history():
 
     tag menu
-    
-    ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    add "gui/StillHeart_Menu/History_Frame_BG.png"
-
-
-    use game_menu(_(""), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
 
         style_prefix "history"
 
         for h in _history_list:
 
-            window:
+            $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
 
-                ## This lays things out properly if history_height is None.
+            window:
+                background Solid("#200e3588")
+                padding (15, 10)
+                xfill True
+
                 has fixed:
                     yfit True
 
                 if h.who:
-
                     label h.who:
                         style "history_name"
-                        substitute False
-
-                        ## Take the color of the who text from the Character, if
-                        ## set.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
-
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
+                    text what style "history_text"
+                else:
+                    text what style "history_narration"
 
         if not _history_list:
             label _("The dialogue history is empty.")
+
+
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1026,6 +1007,13 @@ style history_window is empty
 style history_name is gui_label
 style history_name_text is gui_label_text
 style history_text is gui_text
+
+style history_narration is history_text
+style history_narration:
+    size 24
+    italic True
+    color "#d39ffd"   
+    outlines [ (4, "#251252", 0, 0) ]
 
 style history_label is gui_label
 style history_label_text is gui_label_text
@@ -1042,6 +1030,10 @@ style history_name:
     xsize gui.history_name_width
 
 style history_name_text:
+    size 35         
+    color "#320e6d"
+    outlines [ (4, "#ffffff", 0, 0) ]
+    xalign 0.5     
     min_width gui.history_name_width
     textalign gui.history_name_xalign
 
@@ -1073,7 +1065,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_(""), scroll="viewport"):
+    use game_menu(_("Help"), scroll="viewport"):
 
         style_prefix "help"
 

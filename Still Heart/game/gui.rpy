@@ -93,6 +93,7 @@ define gui.title_text_size = 50
 ##bg for menus -Arthur
 define gui.main_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
 define gui.game_menu_background = "gui/game_menu.png"
+define gui.game_menu_about_background = "../game/images/bg/bg rachelsbedroom.jpg"
 
 
 ## Dialogue ####################################################################

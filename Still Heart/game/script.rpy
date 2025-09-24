@@ -16,7 +16,10 @@ transform character_down:
 
 # The game starts here.
 label start:
-    "Your game starts he- ...Wait, what is this?"
+    "Your game starts here"
+
+    scene black with fade
+
 
 label rachels_bedroom_start:
 

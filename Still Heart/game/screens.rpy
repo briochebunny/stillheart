@@ -972,13 +972,14 @@ screen history():
 
         style_prefix "history"
 
+
         for h in _history_list:
 
             $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-
             window:
+                xsize 820
                 background Solid("#200e3588")
-                padding (15, 10)
+                padding (20, 20)
                 xfill True
 
                 has fixed:
@@ -1014,6 +1015,10 @@ style history_narration:
     italic True
     color "#d39ffd"   
     outlines [ (4, "#251252", 0, 0) ]
+    xmaximum 400
+    xpos 200
+    ypos -15
+    layout "tex"     
 
 style history_label is gui_label
 style history_label_text is gui_label_text
@@ -1024,27 +1029,30 @@ style history_window:
 
 
 style history_name:
-    xpos gui.history_name_xpos
+    xpos 450
+    ypos -20
     xanchor gui.history_name_xalign
-    ypos gui.history_name_ypos
-    xsize gui.history_name_width
+    xmaximum 650
+    layout "tex" 
 
 style history_name_text:
-    size 35         
+    size 30        
     color "#320e6d"
     outlines [ (4, "#ffffff", 0, 0) ]
     xalign 0.5     
-    min_width gui.history_name_width
-    textalign gui.history_name_xalign
+    xmaximum 550
+    layout "tex" 
 
 style history_text:
-    xpos gui.history_text_xpos
-    ypos gui.history_text_ypos
+    xpos 200
+    ypos 25
     xanchor gui.history_text_xalign
-    xsize gui.history_text_width
-    min_width gui.history_text_width
-    textalign gui.history_text_xalign
-    layout ("subtitle" if gui.history_text_xalign else "tex")
+    # xsize gui.history_text_width
+    # min_width gui.history_text_width
+    # textalign gui.history_text_xalign
+    # layout ("subtitle" if gui.history_text_xalign else "tex")
+    xmaximum 400
+    layout "tex" 
 
 style history_label:
     xfill True

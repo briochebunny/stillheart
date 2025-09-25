@@ -1,49 +1,57 @@
-2025-09-25 03:55:06 UTC
-Windows-10-10.0.26100
-Ren'Py 8.3.4.24120703
+2025-09-25 21:54:33 UTC
+Windows-11-10.0.26100-SP0
+Ren'Py 8.4.1.25072401
 
-Early init took 0.18s
-Loading error handling took 0.05s
-Loading script took 0.60s
-Loading save slot metadata took 0.15s
-Loading persistent took 0.00s
-Running init code took 0.16s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
-Dump and make backups took 0.01s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
-DPI scale factor: 1.000000
+Early init took 90 ms
+Loading error handling took 29 ms
+Loading script took 261 ms
+Loading save slot metadata took 41 ms
+Loading persistent took 0 ms
+Running init code took 58 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 124 ms
+Backing up script files to 'C:\\Users\\espam\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 6 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 56 ms
+DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.01s
-Cleaning stores took 0.00s
-Init translation took 0.15s
-Build styles took 0.01s
-Load screen analysis took 0.03s
-Analyze screens took 0.06s
-Save screen analysis took 0.12s
-Prepare screens took 0.61s
-Save pyanalysis. took 0.06s
-Save bytecode. took 0.09s
-Running _start took 0.00s
-Interface start took 0.33s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 374 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 11 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 37 ms
+Running _start took 1 ms
+Interface start took 1039 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1366, 768)
+primary display bounds: (0, 0, 2560, 1600)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) HD Graphics 620'
-Version: b'4.6.0 - Build 31.0.101.2130'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.24'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 2560, 'current_h': 1600, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(2560, 1566) drawable=(2560, 1566)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Screen sizes: virtual=(1280, 720) physical=(2560, 1566) drawable=(2560, 1566)
 Maximum texture size: 4096x4096
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+INFO:renpy_warp_service:connected to renpy warp socket server on :40112
+Cleaning stores took 0 ms
+Load screen analysis took 20 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 20 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+INFO:renpy_warp_service:closing websocket connection :40112
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed

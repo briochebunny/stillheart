@@ -1,40 +1,50 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-SyntaxError: invalid syntax (game/screens.rpy, line 62)
+While running game code:
+NameError: name 'MO' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 209, in script call
+    call rachbedroom_insist_mo_goes
+  File "game/script.rpy", line 240, in script
+    MO "What feels good to me is making sure you're okay, and it doesn't seem like you are!"
+Exception: Sayer 'MO' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
-Full traceback:
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 75, in run
-    renpy.translation.init_translation()
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 702, in init_translation
-    renpy.store._init_language() # type: ignore
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 796, in change_language
-    new_change_language(tl, language)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\translation\__init__.py", line 748, in new_change_language
-    i.apply()
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2806, in apply
-    value = renpy.python.py_eval(expr)
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/screens.rpy, line 62)
+Traceback (most recent call last):
+  File "renpy/ast.py", line 625, in eval_who
+    return renpy.python.py_eval(who)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<none>", line 1, in <module>
+NameError: name 'MO' is not defined
 
-Windows-10-10.0.26100 AMD64
-Ren'Py 8.3.4.24120703
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 209, in script call
+    call rachbedroom_insist_mo_goes
+  File "game/script.rpy", line 240, in script
+    MO "What feels good to me is making sure you're okay, and it doesn't seem like you are!"
+  File "renpy/ast.py", line 2915, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 956, in execute
+    who = eval_who(self.who, self.who_fast)
+          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 627, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'MO' is not defined.
+
+Windows-11-10.0.26100-SP0 AMD64
+Ren'Py 8.4.1.25072401
 Still Heart 1.0
-Thu Sep 25 10:54:45 2025
+Thu Sep 25 14:01:49 2025

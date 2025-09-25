@@ -55,9 +55,15 @@ style scrollbar:
     thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
-    xsize 45
+    xsize 35
     base_bar Frame("gui/StillHeart_Menu_Scrollbars/vertical_bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb "gui/StillHeart_Menu_Scrollbars/vertical_thumb.png"
+    thumb Frame(
+        "gui/StillHeart_Menu_Scrollbars/vertical_thumb.png",
+        gui.vslider_borders,
+        tile=gui.scrollbar_tile, 
+        ysize=33,
+        child=Image("gui/StillHeart_Menu_Scrollbars/vertical_thumb.png")
+    )
 
 style slider:
     ysize gui.slider_size

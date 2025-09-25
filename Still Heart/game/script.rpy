@@ -17,6 +17,17 @@ transform character_down:
 # The game starts here.
 label start:
     "Your game starts here"
+    
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
+    "Your game starts here"
 
     scene black with fade
 

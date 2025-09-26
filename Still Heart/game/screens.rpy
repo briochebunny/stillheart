@@ -355,7 +355,7 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.4
+        yalign 0.475
 
         spacing gui.navigation_spacing
 
@@ -367,10 +367,21 @@ screen navigation():
                 hover Transform("gui/StillHeart_Buttons/Settings_Start_Button_Hover.png")
                 selected_idle Transform("gui/StillHeart_Buttons/Settings_Start_Button_Clicked.png")
                 action Start()
+            imagebutton: #settings
+                idle Transform("gui/StillHeart_Buttons/About_Settings_Button.png")
+                hover Transform("gui/StillHeart_Buttons/About_Settings_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/About_Settings_Button_Clicked.png")
+                action ShowMenu ("preferences")
+            imagebutton: #about
+                idle Transform("gui/StillHeart_Buttons/Settings_About_Button.png")
+                hover Transform("gui/StillHeart_Buttons/Settings_About_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/Settings_About_Button_Clicked.png")
+                action ShowMenu("about")
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
+            #we dont have a history button besides the one on the textbox -elaina
 
             #textbutton _("Save") action ShowMenu("save")
 
@@ -382,6 +393,12 @@ screen navigation():
                 action ShowMenu("load")
 
             #textbutton _("Preferences") action ShowMenu("preferences")
+            imagebutton: #settings
+                idle Transform("gui/StillHeart_Buttons/About_Settings_Button.png")
+                hover Transform("gui/StillHeart_Buttons/About_Settings_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/About_Settings_Button_Clicked.png")
+                action ShowMenu ("preferences")
+
 
         if _in_replay:
 
@@ -389,15 +406,16 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            #textbutton _("Main Menu") action MainMenu()
+            imagebutton: #mainmenu
+                idle Transform("gui/StillHeart_Buttons/About_MainMenu_Button.png")
+                hover Transform("gui/StillHeart_Buttons/About_MainMenu_Button_Hover.png")
+                selected_idle Transform("gui/StillHeart_Buttons/About_MainMenu_Button_Clicked.png")
+                action MainMenu()
 
 
         #textbutton _("About") action ShowMenu("about")
-        imagebutton: #about
-            idle Transform("gui/StillHeart_Buttons/Settings_About_Button.png")
-            hover Transform("gui/StillHeart_Buttons/Settings_About_Button_Hover.png")
-            selected_idle Transform("gui/StillHeart_Buttons/Settings_About_Button_Clicked.png")
-            action ShowMenu("about")
+        
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 

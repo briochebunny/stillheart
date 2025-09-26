@@ -234,11 +234,26 @@ style choice_vbox:
 
     spacing gui.choice_spacing
 
-style choice_button is default:
-    properties gui.button_properties("choice_button")
+# dialogue choices in game -Arthur
+transform zoomed:
+    zoom 1.1
 
-style choice_button_text is default:
-    properties gui.text_properties("choice_button")
+style choice_button:
+    background Frame("gui/StillHeart_TextBox/Textbox_Header_Frame.png", 10, 10)
+    padding (40, 20)      
+    xalign 0.5            
+    yalign 0.5
+    hover_background At(Frame("gui/StillHeart_TextBox/Textbox_Header_Frame.png", 10, 10), zoomed)
+    # selected_background Frame("gui/choice_button_selected.png", 10, 10)
+
+style choice_button_text:
+    font "./fonts/Coffee Mood.ttf"
+    size 24
+    color "#945edb"
+    hover_color "#c693e7"
+    outlines [(2, "#42324e", 0, 0)]   # text outline
+    textalign 0.5
+    xalign 0.5
 
 
 ## Quick Menu screen ###########################################################

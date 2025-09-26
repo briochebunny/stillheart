@@ -96,6 +96,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 define gui.game_menu_about_background = "../game/images/bg/bg rachelsbedroom.jpg"
 
 
+
 ## Dialogue ####################################################################
 ##
 ## These variables control how dialogue is displayed on the screen one line at a

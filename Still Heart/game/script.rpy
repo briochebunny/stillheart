@@ -70,7 +70,7 @@ label rachels_bedroom_start:
     "All this movement seems to be getting on the redhead's nerves, as she furrows her brow in discomfort. Her eyes remain shut."
 
     show ra default:
-        xpos -0.4
+        xpos -0.35
         ypos 0.1
 
     ra "Moni, your sweater keeps tickling my arm hair."
@@ -78,7 +78,7 @@ label rachels_bedroom_start:
     "Monique, the brunette, shifts a bit to the right to give her friend some much needed space."
 
     show mo default:
-        xpos 0.4
+        xpos 0.35
         ypos 0.0
 
     mo "Whoops, sorry, Rach."

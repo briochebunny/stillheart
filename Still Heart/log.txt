@@ -1,34 +1,35 @@
-2025-09-28 07:38:18 UTC
+2025-09-28 21:17:11 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.1.25072401
 
-Early init took 81 ms
-Loading error handling took 21 ms
-Loading script took 312 ms
-Loading save slot metadata took 44 ms
+Early init took 90 ms
+Loading error handling took 191 ms
+Loading script took 4547 ms
+Loading save slot metadata took 685 ms
 Loading persistent took 0 ms
-Running init code took 49 ms
-Loading analysis data took 3 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 233 ms
+ - Init at game/gui.rpy:12 took 418 ms.
+Running init code took 600 ms
+Loading analysis data took 25 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 587 ms
 Backing up script files to 'C:\\Users\\espam\\AppData\\Roaming/RenPy/backups\\Still Heart':
-Dump and make backups took 3 ms
+Dump and make backups took 9 ms
 Cleaning cache took 0 ms
 Making clean stores took 1 ms
-Initial gc took 27 ms
+Initial gc took 46 ms
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 216 ms
+Creating interface object took 369 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 7 ms
-Save screen analysis took 10 ms
+Load screen analysis took 30 ms
+Analyze screens took 12 ms
+Save screen analysis took 16 ms
 Save pyanalysis took 0 ms
-Save bytecode took 25 ms
+Save bytecode took 43 ms
 Running _start took 1 ms
-Interface start took 637 ms
+Interface start took 406 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1600)

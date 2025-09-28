@@ -6,6 +6,7 @@ define sendText = False
 
 define fadeLong = Fade(0.5, 1, 0.5)
 define af = renpy.audio.filter
+define customMove = MoveTransition(1.5)
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -94,7 +95,7 @@ label rachels_bedroom_start:
 
     "All this movement seems to be getting on the redhead's nerves, as she furrows her brow in discomfort. Her eyes remain shut."
 
-    show ra default:
+    show ra default with customMove:
         xpos -0.1
         ypos 0.2
 
@@ -102,7 +103,7 @@ label rachels_bedroom_start:
 
     "Monique, the brunette, shifts a bit to the right to give her friend some much needed space."
 
-    show mo concern:
+    show mo concern with customMove:
         xpos 0.7
         ypos 0.15
 
@@ -187,12 +188,14 @@ label rachels_bedroom_start:
 
     "And, before she could stop herself-"
 
+    show ra timid
     ra "I'll even go to back you up too, okay?"
 
     "Whoops."
 
     "Looks like Rachel has a hard time holding her tongue."
 
+    show mo concern
     mo "Wha-? Are you serious? I thought you hated parties."
 
     "Rachel withholds a grimace at the mention. She's never been particularly fond of parties, and the feeling only worsened in high school."
@@ -200,6 +203,7 @@ label rachels_bedroom_start:
     ra "I mean, I can just hang out in a corner so no one talks to me, it's fine."
     ra "And it's a Halloween party, right? I can just put on a mask or something so no one realizes it's me."
 
+    show mo gentle
     mo "Wow Rachel, in the time I've known you, you've never been one for large crowds."
     mo "Just the mention of being around lots of people has you ducking for cover."
 
@@ -208,31 +212,40 @@ label rachels_bedroom_start:
 
     mo "Well..."
 
+    show ra smile
     ra "Oh, screw you!"
 
+    show mo default
     "Rachel tosses one of her pillows at Monique, eliciting a laugh from the girl as it smacks her in the face, before plopping into her lap."
 
+    show mo gentle
     "Monique's smile falters for a moment, and Rachel realizes the very important question she has yet to ask."
 
     ra "Did you ask whose house the party was being held at?"
 
     mo "Um, yeah...I did."
 
+    show ra default
     "Rachel stares at her expectantly."
 
     mo "..."
 
     ra "Well?"
 
+    show mo concern
     mo "It's uh, being held at..."
+
+    show ra shocked
     mo "...Celine's."
 
     ra "..."
 
     mo "Y-yeah…"
+    show mo gentle
     mo "Listen, I can just tell him I wasn't feeling well on Monday, I don't have to."
     mo "I accepted without thinking anyway..."
 
+    show ra frown
     "Despite her words, Monique looks dejected, as though she were already predicting the outcome to be not in her favor."
 
     "It seems like she was really looking forward to this."
@@ -251,12 +264,16 @@ label rachels_bedroom_start:
 
     "There's a heavy silence for a moment, before Monique breaks out into a smile."
 
+    show mo default
     mo "Damn, you got guts, girl! Going to the home of your biggest enemy is pretty ballsy."
 
+    show ra smile
     ra "Yeah, yeah. I'm only going for you. And maybe the dog."
 
     mo "Definitely the dog!"
     mo "Anyway, it starts in a couple hours so we should start getting ready, I think!"
+    
+    show mo smile
     mo "We can't pull up to a Halloween party without any costumes on, that's like...Mac without Cheese."
 
     "With the air cleared, Monique seems to be in a much better mood."
@@ -306,6 +323,7 @@ label halloween_party:
 
     "Rachel's anxiety is made noticeable by Monique, who offers a small smile of sympathy."
 
+    show mo concernCOS with moveinright
     mo "Hey, you don't look too hot."
     mo "It's not too late for us to turn back."
 
@@ -646,7 +664,6 @@ label halloween_party:
     ra "Is that-?"
 
     show mi partydark
-
     "There stands Mia before the crowd."
 
     "She is as beautiful as ever, even in this decrepit state she finds herself in."
@@ -660,21 +677,28 @@ label halloween_party:
     
 
 
+
+
+
 label rachbedroom_insist_mo_goes:
+    show ra smile
     ra "No, you should go."
     ra "Forget about me for a second. Do what feels good to you."
 
+    show mo concern
     mo "What feels good to me is making sure you're okay, and it doesn't seem like you are!"
     mo "And besides, I don't even know if I'd want to go anyway."
     mo "Rachel...Celine is like, your biggest hater."
     mo "Sure, you have a reputation of sorts, but she's like, the CEO of the Anti Rachel Regime."
 
+    show ra frown
     ra "Yeah, well, she can suck it up for once."
 
     mo "Suck it up?"
     mo "How can you expect her to suck it up when she thinks you're the reason her sister is missing?"
     mo "With a grudge THAT big you'd think she would crush half the cheer squad with all that weight."
 
+    show mo gentle
     ra "Moni, be serious."
 
     mo "I am serious! I don't get how you're so comfortable with this."
@@ -683,12 +707,15 @@ label rachbedroom_insist_mo_goes:
     return
 
 label rachbedroom_disuade_mo:
+    show ra sad
     ra "Hey...I'm sure it'll be super boring anyway."
     ra "It's not like they've got anything that you don't already have."
     ra "And… it's like you said, right? You can see him again on Monday?"
 
+    show mo concern
     "Monique averts her eyes."
 
+    show mo gentle
     mo "...They got a Pac-Man machine."
 
     "Damn. They really do got everything."
@@ -701,43 +728,54 @@ label rachbedroom_disuade_mo:
 
     "Monique no doubt faces similar scrutiny from peers due to association."
 
-    "Her social life seemed to be mostly fine, but was Rachel really going to deny her something she seemed to want so badly, for her own selfish reasons?"
+    "Her social life seems to be mostly fine, but was Rachel really going to deny her something she appears to want so badly, for her own selfish reasons?"
 
     "And with Monique looking down like that, she knew she couldn't say no."
 
+    show ra default
     ra "..."
     ra "God, I feel like a jerk."
+    show ra smile
     ra "You shouldn't not go because of me, Moni."
     ra "It'll be fun, I think!"
 
-    "Monique slowly looked back at Rachel, a quizzical expression formed."
+    show mo concern
+    "Monique slowly looks back at Rachel, a quizzical expression forming."
 
     mo "...Are you serious?"
 
-    "A small smile formed on Rachel's face."
+    show ra smile
+    "A small smile forms on Rachel's face."
 
     ra "Yeah, forget about me for a second. Do what feels good to you."
     ra "I'll be fine."
     return
 
 label rachbedroom_ra_fine:
+    show ra timid
     ra "You know what? I'll be fine."
     ra "Why don't you tell me what it's like after?"
 
+    show mo concern
     mo "Rach, are you serious? I can't do this by myself!"
     mo "Sure I'm...more social than you are, but we're a team!"
+    show mo gentle
     mo "You know, the whole Dastardly Duo or whatever."
     mo "Besides, I don't want to go there just KNOWING it's a place that might not accept you...No offense."
 
+    show ra smile
     "Rachel smiles at Monique, but it doesn't quite reach her eyes."
 
     ra "I honestly don't mind."
     ra "You can get some sweet info on what people think about me!"
 
+    show mo angry
     mo "This isn't the time to joke! Celine literally hates your guts."
+    show mo concern
     mo "She thinks what happened is your fault!"
     mo "How can I just leave you for that?"
 
+    show ra default
     ra "Look, that doesn't matter when you're not even going for her!"
     ra "She won't even know you're going until you're there."
 
@@ -749,7 +787,9 @@ label rachbedroom_ra_fine:
 
     "For Moni, she'd push her issues aside."
 
+    show ra timid
     ra "Alright, you got my hands tied."
+    show ra smile
     ra "Do what feels good to you, I'll be right beside you."
     return
 

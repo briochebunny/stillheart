@@ -1,34 +1,34 @@
-2025-09-28 00:36:11 UTC
+2025-09-28 07:38:18 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.1.25072401
 
-Early init took 79 ms
-Loading error handling took 27 ms
-Loading script took 309 ms
-Loading save slot metadata took 53 ms
+Early init took 81 ms
+Loading error handling took 21 ms
+Loading script took 312 ms
+Loading save slot metadata took 44 ms
 Loading persistent took 0 ms
-Running init code took 45 ms
+Running init code took 49 ms
 Loading analysis data took 3 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 98 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 233 ms
 Backing up script files to 'C:\\Users\\espam\\AppData\\Roaming/RenPy/backups\\Still Heart':
-Dump and make backups took 4 ms
+Dump and make backups took 3 ms
 Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 32 ms
+Making clean stores took 1 ms
+Initial gc took 27 ms
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 229 ms
+Creating interface object took 216 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 1 ms
 Analyze screens took 7 ms
-Save screen analysis took 11 ms
-Save pyanalysis took 1 ms
-Save bytecode took 32 ms
-Running _start took 0 ms
-Interface start took 352 ms
+Save screen analysis took 10 ms
+Save pyanalysis took 0 ms
+Save bytecode took 25 ms
+Running _start took 1 ms
+Interface start took 637 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1600)

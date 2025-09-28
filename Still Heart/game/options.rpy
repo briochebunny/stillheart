@@ -19,7 +19,7 @@ define config.name = _("Still Heart")
 ## this to False to hide the title.
 
 #define gui.show_name = True
-define gui.show_name = False #hides the game title from main menu - elaina
+define gui.show_name = False 
 
 
 ## The version of the game.
@@ -30,7 +30,11 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""Still Heart is currently a DEMO, meaning that the game itself isn't finished, this is just a snippet! As stated in the itch page, if enough people show interest in the demo, then I will potentially begin programming the full game.
+
+There are certain aspects, such as the UI, that are not polished yet due to time restrictions. Future updates possible.
+
+Thank you for taking your time to play my game! We all worked hard this past month so I hope you enjoy it :)
 """)
 
 
@@ -51,6 +55,10 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
+define config.default_music_volume = 0.6
+define config.default_sfx_volume = 0.6
+define config.default_voice_volume = 0.6
+
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
@@ -63,7 +71,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "Whisper.wav"
 
 
 ## Transitions #################################################################
@@ -80,7 +88,7 @@ define config.exit_transition = dissolve
 
 ## Between screens of the game menu.
 
-define config.intra_transition = None
+define config.intra_transition = dissolve
 
 
 ## A transition that is used after a game has been loaded.
@@ -88,9 +96,14 @@ define config.intra_transition = None
 define config.after_load_transition = None
 
 
+#dissolve transition between splashscreen and main menu
+
+define config.end_splash_transition = dissolve
+
+
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = dissolve
 
 
 ## A variable to set the transition used when the game starts does not exist.
@@ -121,7 +134,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 38
+default preferences.text_cps = 40
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0

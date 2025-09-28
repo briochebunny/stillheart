@@ -91,7 +91,7 @@ define gui.title_text_size = 50
 
 ## The images used for the main and game menus.
 ##bg for menus -Arthur
-define gui.main_menu_background = "gui/StillHeart_Menu/Settings_BG.png"
+define gui.main_menu_background = "gui/StillHeart_Menu/Title_Screen_BG_W_Frame.png"
 define gui.game_menu_background = "gui/game_menu.png"
 define gui.game_menu_about_background = "../game/images/bg/bg rachelsbedroom.jpg"
 

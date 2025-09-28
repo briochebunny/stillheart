@@ -5,6 +5,7 @@ define cliffFirst = False
 define sendText = False
 
 define fadeLong = Fade(0.5, 1, 0.5)
+define af = renpy.audio.filter
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -19,6 +20,22 @@ transform character_down:
     xalign 0.5
     yalign -0.3
 
+image splash = "gui/spooktober logo.png"
+
+# adding a splash screen
+label splashscreen:
+    $ renpy.music.set_volume(0.5)
+
+    scene black
+    with Pause(1.0)
+
+    show splash with dissolve
+    with Pause(4.0)
+
+    scene black with dissolve
+    with Pause(1.0)
+
+    return
 
 # The game starts here.
 label start:
@@ -42,6 +59,8 @@ label start:
 
     "After all, some secrets are better kept in the dark."
 
+    stop music fadeout 1.0
+
     scene black with fade
     jump rachels_bedroom_start
 
@@ -51,6 +70,8 @@ label rachels_bedroom_start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+
+    play music "Hushed.wav"
 
     scene bg rachelsbedroom
     with dissolve
@@ -74,7 +95,7 @@ label rachels_bedroom_start:
     "All this movement seems to be getting on the redhead's nerves, as she furrows her brow in discomfort. Her eyes remain shut."
 
     show ra default:
-        xpos 0.0
+        xpos -0.1
         ypos 0.2
 
     ra "Moni, your sweater keeps tickling my arm hair."
@@ -82,7 +103,7 @@ label rachels_bedroom_start:
     "Monique, the brunette, shifts a bit to the right to give her friend some much needed space."
 
     show mo concern:
-        xpos 0.6
+        xpos 0.7
         ypos 0.15
 
     mo "Whoops, sorry, Rach."
@@ -123,6 +144,7 @@ label rachels_bedroom_start:
     mo "Okay okay."
     mo "So...you remember the guy from Advanced Art last year?"
 
+    show ra default
     ra "The one who..."
 
     menu:
@@ -148,12 +170,14 @@ label rachels_bedroom_start:
     mo "YES! I honestly had NO idea he even remembered me since we barely ever spoke."
     mo "Well anyway, we were talking a bit and he was totally flirting with me."
 
+    show mo gentle
     "It's at this point that Monique starts to look reluctant to speak, as though her nerves came flooding back."
 
     mo "But, um, he asked if I was busy today and I said no, so..."
     mo "He invited me to this Halloween party he's going to."
     mo "And I just said yes without thinking since it's open to the upper classmen, but now that I think about it, I'm getting second thoughts."
 
+    show ra shocked
     ra "What? No, you have to go! You told me you thought he was cute at the start of the year, it's been months."
     ra "You're still into him, right?"
 
@@ -239,6 +263,8 @@ label rachels_bedroom_start:
 
     "Maybe it'll be okay for Rachel to go after all."
 
+    stop music fadeout 1.0
+
     jump halloween_party
 
     
@@ -269,6 +295,8 @@ label halloween_party:
 
     "They are not places for fun."
 
+    $ renpy.music.set_audio_filter("music", walkie_talkie_af, replace=True)
+    play music "Rattled.wav" volume 0.5
     scene bg partyexterior
     with fadeLong
 
@@ -320,6 +348,7 @@ label halloween_party:
 
     "Reluctantly, she follows her friend inside..."
 
+    $ renpy.music.set_audio_filter("music", None, replace=True)
     scene bg partyinterior
     with fade
 
@@ -436,7 +465,9 @@ label halloween_party:
 
     mo "Rachel, look!! There he is!"
 
-    "Rachel looks to where her friend is pointing, and through the dark lighting of the room was able to make out someone dressed up as a fictional character of some sort, with a styled wig and what looked to be a professional made outfit to match."
+    "Rachel looks to where her friend is pointing, and through the dark lighting of the room was able to make out someone."
+    
+    "They looked to be dressed up as a fictional character of some sort, with a styled wig and what looked to be a professional made outfit to match."
 
     "The character doesn't ring any bells for Rachel, but the craftsmanship is admirable."
 
@@ -550,8 +581,12 @@ label halloween_party:
             "Migrate back to the snack table.":
                 call celine_party
 
+    stop music fadeout 2.0
     scene bg partyinterior
     with wipeleft
+
+    play music "Breath.wav" fadein 0.5
+
 
     "--?!"
 
@@ -742,7 +777,7 @@ label celine_party:
 
     "Luckily, if her friendly and apologetic tone is something to go off of, it seems she hasn't noticed who exactly bumped into her."
 
-    "Seems the lighting of the room helped obstruct her identity."
+    "Looks like the lighting of the room helped obstruct her identity."
 
     "Also, Celine is a bit taller than her, and the hood of her cloak is still pulled up over her head, so maybe her face is still a bit hidden?"
 
@@ -766,12 +801,12 @@ label celine_party:
 
     menu:
         "Lie.":
-            ra "Yeah it's fun."
-
+            pass
         "Lie.":
-            ra "Yeah it's fun."
+            pass
     #there are two bc i think its funny heh
 
+    ra "Yeah, it's fun."
     ra "I uh, like what you did with the place."
     ra "Decorations are real...lively?"
 
@@ -1211,7 +1246,9 @@ label celine_party_2:
 
     menu:
         "Tell Celine the truth.":
-            ra "I..."
+            pass
+
+    ra "I..."
     ra "..."
     ra "Okay."
     ra "It was four years ago, as you know."
@@ -1275,15 +1312,15 @@ label cliff_party:
 
     "The dog, now sensing Rachel's presence, tears away from the knight, eagerly bounding towards her."
 
-    "She doesn't even have time to react before it pounces, sending her to the ground as it licks her face, tail creating an afterimages from the sheer speed of its wagging."
+    "She doesn't even have time to react before it pounces, sending her to the ground as it licks her face, tail creating an afterimage from the sheer speed of its wagging."
 
     ra "Aww, hey buddy!"
 
-    "The dog let out a ‘Borf!' and continued its relentless onslaught of slobber."
+    "The dog let out a 'Borf!' and continued its relentless onslaught of slobber."
 
     ra "C'mon Biscuit, that's so gross!!"
 
-    cl "Dang, that's the friendliest she's been with people all night!"
+    "Stranger" "Dang, that's the friendliest she's been with people all night!"
 
     "Rachel glances slightly towards the voice, coming from the person in the handmade knight costume."
 
@@ -1291,9 +1328,9 @@ label cliff_party:
 
     "The stranger nods."
 
-    cl "Uh-huh."
-    cl "She's been hyper and jumping on people, but I haven't seen her topple anyone to the ground like that."
-    cl "I guess she really likes you."
+    "Stranger" "Uh-huh."
+    "Stranger" "She's been hyper and jumping on people, but I haven't seen her topple anyone to the ground like that."
+    "Stranger" "I guess she really likes you."
 
     ra "Yeah, I guess so."
 
@@ -1301,17 +1338,19 @@ label cliff_party:
 
     "She tries to push Biscuit back, but her efforts go unnoticed by the golden retriever."
 
-    "Her bright hair spills forward, and the nudging of her snout causes the hood to be pushed back ever so slightly."
+    "Her bright hair spills forward, and the nudging of Biscuit's snout causes the hood to be pushed back ever so slightly."
 
     "The stranger stiffens before carefully raising their visor to reveal a familiar face."
 
-    cl "I don't believe it!"
+    "Stranger" "I don't believe it!"
 
     menu:
         "Try lowering the hood.":
-            "It was too late."
+            pass
         "Go, Biscuit! Attack!!":
-            "It was too late."
+            pass
+
+    "It was too late."
 
     "She REALLY should have invested in a mask or something."
 
@@ -1471,7 +1510,7 @@ label cliff_party:
 
     cl "Oh yeah, sure."
     cl "I'll have you know I come from an honorable family, put some respect on my name."
-    cl "I won't have a nasty criminal such as yourself slander my name."
+    cl "I won't have a nasty criminal such as yourself slander it."
 
     ra "Look, I really didn't do anything."
 

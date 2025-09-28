@@ -276,6 +276,13 @@ screen quick_menu():
             yalign 0.98
             spacing 5
 
+            imagebutton: #back
+                idle Transform("gui/StillHeart_Buttons/Textbox_Return_Button.png", zoom=0.7)
+                hover Transform("gui/StillHeart_Buttons/Textbox_Return_Button_Hover.png", zoom=0.7)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Return_Button_Clicked.png", zoom=0.7)
+                action Rollback()
+
+
             imagebutton: # history 1
                 idle Transform("gui/StillHeart_Buttons/Textbox_History_Button.png", zoom=0.7)
                 hover Transform("gui/StillHeart_Buttons/Textbox_History_Button_Hover.png", zoom=0.7) 
@@ -300,11 +307,11 @@ screen quick_menu():
                 selected_idle Transform("gui/StillHeart_Buttons/Textbox_Save_Button_Clicked.png", zoom=0.7)
                 action ShowMenu("save")
                 
-            imagebutton: # load 5
-                idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button.png", zoom=0.7)
-                hover Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Hover.png", zoom=0.7)
-                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Clicked.png", zoom=0.7)
-                action QuickLoad()
+            #imagebutton: # load 5
+            #    idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button.png", zoom=0.7)
+            #    hover Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Hover.png", zoom=0.7)
+            #    selected_idle Transform("gui/StillHeart_Buttons/Textbox_Load_Button_Clicked.png", zoom=0.7)
+            #    action QuickLoad()
                 
             imagebutton: # settings/pref 6
                 idle Transform("gui/StillHeart_Buttons/Textbox_Setting_Button.png", zoom=0.7)

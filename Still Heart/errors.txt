@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1306: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Go, Biscuit! Attack!!"
-                           ^
+File "game/options.rpy", line 68: invalid syntax
+    "Whisper.wav" volume 0.5
+                  ^^^^^^
+
+File "game/script.rpy", line 58: expected end of line
+    play music "Hushed.wav" fadein 1.0, volume 0.5
+                                      ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Sat Sep 27 15:35:27 2025
+Sat Sep 27 22:00:35 2025

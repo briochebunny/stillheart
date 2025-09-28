@@ -1,31 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 544, in script call
-    call celine_party
-  File "game/script.rpy", line 1102, in script
-    "But after the dumpster-fire encounter with Cliff, her reservations have gone down from 95% to maybe 30%."
-ValueError: unsupported format character 't' (0x74) at index 91
+  File "game/script.rpy", line 76, in script
+    play music "Hushed.wav" volume
+TypeError: eval() arg 1 must be a string, bytes or code object
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 544, in script call
-    call celine_party
-  File "game/script.rpy", line 1102, in script
-    "But after the dumpster-fire encounter with Cliff, her reservations have gone down from 95% to maybe 30%."
-  File "renpy/ast.py", line 2915, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 991, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/sayexports.py", line 118, in say
-    what = what % tag_quoting_dict
-           ~~~~~^~~~~~~~~~~~~~~~~~
-ValueError: unsupported format character 't' (0x74) at index 91
+  File "game/script.rpy", line 76, in script
+    play music "Hushed.wav" volume
+  File "renpy/ast.py", line 2231, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 379, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 137, in execute_play_music
+    relative_volume=eval(p.get("volume", "1.0")))
+                    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^ 
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: eval() arg 1 must be a string, bytes or code object
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Still Heart 1.0
-Sat Sep 27 12:20:56 2025
+Sat Sep 27 22:17:37 2025

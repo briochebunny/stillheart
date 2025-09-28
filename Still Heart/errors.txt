@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 115: Menu does not contain any choices.
-    menu:
-         ^
+File "game/script.rpy", line 1306: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Go, Biscuit! Attack!!"
+                           ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Thu Sep 25 13:26:45 2025
+Sat Sep 27 15:35:27 2025

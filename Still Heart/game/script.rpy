@@ -17,6 +17,22 @@ define cl = Character("Cliff")
 define ce = Character("Celine")
 define mi = Character("Mia")
 
+init python:
+    #image predictions -Arthur
+    images_to_preload = [
+        # USED sprites
+        "ra default", "ra defaultcos", "ra frown", "ra frowncos", "ra sad", "ra sadcos", "ra shocked", "ra shockedcos", "ra smile", "ra smilecos", "ra timid", "ra timidcos",
+        "mo angry", "mo angrycos", "mo concern", "mo concerncos", "mo default", "mo defaultcos", "mo gentle", "mo gentlecos", "mo smile", "mo smilecos",
+        "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+        # BGs
+        "bg partyexterior", "bg partyinterior", "bg partyporch", "bg rachelsbedroom",
+        # covers/splashes
+        "itchMainCover", "spooktober logo", "thanks for playing"
+    ]
+
+    for img in images_to_preload:
+        renpy.start_predict(img)
+
 
 image splash = "images/spooktober logo.png"
 image endcreds = "images/thanks for playing.png"
@@ -52,6 +68,7 @@ transform posLeft:
 transform posRight:
     xpos 0.65
     ypos 0.15
+
 
 
 # The game starts here.

@@ -1,33 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 26, in script
-    $ config.keymap['dismiss'].remove('mousedown_1')
-  File "game/script.rpy", line 26, in <module>
-    $ config.keymap['dismiss'].remove('mousedown_1')
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-ValueError: list.remove(x): x not in list
+  File "game/script.rpy", line 20, in script
+    init python:
+  File "game/script.rpy", line 32, in <module>
+    renpy.start_predict(img)
+Exception: An empty string cannot be used as a displayable.
 
 -- Full Traceback ------------------------------------------------------------
 
-Traceback (most recent call last):
-  File "game/script.rpy", line 26, in script
-    $ config.keymap['dismiss'].remove('mousedown_1')
-  File "renpy/ast.py", line 1187, in execute
+Full traceback:
+  File "game/script.rpy", line 20, in script
+    init python:
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 26, in <module>
-    $ config.keymap['dismiss'].remove('mousedown_1')
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 28, in remove
-    _list.remove(self, a)
-    ~~~~~~~~~~~~^^^^^^^^^
-ValueError: list.remove(x): x not in list
+  File "game/script.rpy", line 32, in <module>
+    renpy.start_predict(img)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\exports\predictexports.py", line 93, in start_predict
+    d = renpy.easy.displayable(d)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\easy.py", line 117, in displayable
+    raise Exception("An empty string cannot be used as a displayable.")
+Exception: An empty string cannot be used as a displayable.
 
-Windows-11-10.0.26100-SP0 AMD64
-Ren'Py 8.4.1.25072401
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.4.24120703
 Still Heart 1.0
-Mon Sep 29 01:40:18 2025
+Mon Sep 29 18:55:21 2025

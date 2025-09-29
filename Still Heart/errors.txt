@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 68: invalid syntax
-    "Whisper.wav" volume 0.5
-                  ^^^^^^
+File "game/script.rpy", line 345: show statement expects a non-empty block.
+    show ra timidcos at moveinleft:
+                                   ^
 
-File "game/script.rpy", line 58: expected end of line
-    play music "Hushed.wav" fadein 1.0, volume 0.5
-                                      ^
-
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Sat Sep 27 22:00:35 2025
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Mon Sep 29 12:03:09 2025

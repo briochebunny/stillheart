@@ -1,49 +1,534 @@
-2025-09-29 01:27:39 UTC
-Windows-11-10.0.26100-SP0
-Ren'Py 8.4.1.25072401
+2025-09-29 05:03:06 UTC
+Windows-10-10.0.26100
+Ren'Py 8.3.4.24120703
 
-Early init took 83 ms
-Loading error handling took 25 ms
-Loading script took 296 ms
-Loading save slot metadata took 68 ms
-Loading persistent took 0 ms
-Running init code took 61 ms
-Loading analysis data took 6 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 70 ms
-Backing up script files to 'C:\\Users\\espam\\AppData\\Roaming/RenPy/backups\\Still Heart':
-Dump and make backups took 6 ms
-Cleaning cache took 1 ms
-Making clean stores took 0 ms
-Initial gc took 43 ms
-DPI scale factor: 1.500000
+Early init took 0.15s
+Loading error handling took 0.19s
+Loading script took 2.19s
+Loading save slot metadata took 0.20s
+Loading persistent took 0.02s
+
+File "game/script.rpy", line 345: show statement expects a non-empty block.
+    show ra timidcos at moveinleft:
+                                   ^
+DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 196 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 10 ms
-Save screen analysis took 10 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 276 ms
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.34s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1600)
+primary display bounds: (0, 0, 1366, 768)
 swap interval: 1 frames
 Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 566.24'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 2560, 'current_h': 1600, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(2560, 1566) drawable=(2560, 1566)
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 75.55s
+Loading error handling took 0.08s
+Loading script took 1.39s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.01s
+Running init code took 0.12s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.04s
+Save screen analysis took 0.02s
+Prepare screens took 0.18s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.13s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Screen sizes: virtual=(1280, 720) physical=(2560, 1566) drawable=(2560, 1566)
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:connected to renpy warp socket server on :40111
 INFO:renpy_warp_service:closing websocket connection :40111
 INFO:renpy_warp_service:connection replaced, service exiting
 INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 215.15s
+Loading error handling took 0.04s
+Loading script took 0.68s
+Loading save slot metadata took 0.08s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.01s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.28s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+
+Full traceback:
+  File "game/script.rpy", line 622, in script call
+    call cliff_party
+  File "game/script.rpy", line 1592, in script
+    show ra timidcos with moveinleft:
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1367, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 1578, in do_with
+    return self.interact(trans_pause=True,
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2666, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2575, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\atl.py", line 623, in __call__
+    new_scope = signature.apply(args, kwargs, partial=True, apply_defaults=False)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\parameter.py", line 384, in apply
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'old_widget'
+
+While running game code:
+  File "game/script.rpy", line 622, in script call
+    call cliff_party
+  File "game/script.rpy", line 1592, in script
+    show ra timidcos with moveinleft:
+TypeError: got an unexpected keyword argument 'old_widget'
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 602.56s
+Loading error handling took 0.07s
+Loading script took 0.57s
+Loading save slot metadata took 0.11s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.31s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 747.52s
+Loading error handling took 0.04s
+Loading script took 0.42s
+Loading save slot metadata took 0.07s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.32s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+
+Full traceback:
+  File "game/script.rpy", line 622, in script call
+    call cliff_party
+  File "game/script.rpy", line 1647, in script
+    show cl sneercos with moveinright:
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1367, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 1578, in do_with
+    return self.interact(trans_pause=True,
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2666, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2575, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\atl.py", line 623, in __call__
+    new_scope = signature.apply(args, kwargs, partial=True, apply_defaults=False)
+  File "c:\Users\toast\Downloads\renpy-8.3.4-sdk\renpy\parameter.py", line 384, in apply
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'old_widget'
+
+While running game code:
+  File "game/script.rpy", line 622, in script call
+    call cliff_party
+  File "game/script.rpy", line 1647, in script
+    show cl sneercos with moveinright:
+TypeError: got an unexpected keyword argument 'old_widget'
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 827.78s
+Loading error handling took 0.03s
+Loading script took 0.89s
+Loading save slot metadata took 0.12s
+Loading persistent took 0.00s
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.10s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.01s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.19s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.01s
+Load screen analysis took 0.01s
+Analyze screens took 0.04s
+Save screen analysis took 0.06s
+Prepare screens took 0.16s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.32s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 933.48s
+Loading error handling took 0.04s
+Loading script took 1.30s
+Loading save slot metadata took 0.18s
+Loading persistent took 0.00s
+Running init code took 0.08s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.07s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.01s
+Load screen analysis took 0.01s
+Analyze screens took 0.03s
+Save screen analysis took 0.03s
+Prepare screens took 0.18s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 936.74s
+Loading error handling took 0.05s
+Loading script took 0.31s
+Loading save slot metadata took 0.08s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.29s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 1579.15s
+Loading error handling took 0.05s
+Loading script took 0.49s
+Loading save slot metadata took 0.15s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.17s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.29s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 1591.73s
+Loading error handling took 0.08s
+Loading script took 0.61s
+Loading save slot metadata took 0.19s
+Loading persistent took 0.00s
+Running init code took 0.08s
+Loading analysis data took 0.06s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.07s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\toast\\AppData\\Roaming/RenPy/backups\\Still Heart':
+Dump and make backups took 0.00s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.31s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics 620'
+Version: b'4.6.0 - Build 31.0.101.2130'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Screen sizes: virtual=(1280, 720) physical=(1366, 697) drawable=(1366, 697)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111

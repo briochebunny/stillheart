@@ -237,6 +237,7 @@ style choice_vbox:
 # dialogue choices in game -Arthur
 transform zoomed:
     zoom 1.1
+    align (0.5, 0.5)
 
 style choice_button:
     background Frame("gui/StillHeart_TextBox/Textbox_Header_Frame.png", 10, 10)
@@ -249,12 +250,10 @@ style choice_button:
 style choice_button_text:
     font "./fonts/Coffee Mood.ttf"
     size 24
-    color "#945edb"
-    hover_color "#c693e7"
-    outlines [(2, "#42324e", 0, 0)]   # text outline
-    textalign 0.5
+    color "#e8e2ff"
+    hover_color "#959adb"
+    outlines [(2, "#1f1d33", 0, 0)]   # text outline
     xalign 0.5
-
 
 ## Quick Menu screen ###########################################################
 ##
@@ -298,7 +297,7 @@ screen quick_menu():
             imagebutton: # auto 3
                 idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button.png", zoom=0.7)
                 hover Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Hover.png", zoom=0.7)
-                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Clicked.png", zoom=0.85)
+                selected_idle Transform("gui/StillHeart_Buttons/Textbox_Auto_Button_Clicked.png", zoom=0.7)
                 action Preference("auto-forward", "toggle")
             
             imagebutton: # save 4

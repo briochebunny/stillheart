@@ -17,9 +17,6 @@ define cl = Character("Cliff")
 define ce = Character("Celine")
 define mi = Character("Mia")
 
-transform character_down:
-    xalign 0.5
-    yalign -0.3
 
 image splash = "images/spooktober logo.png"
 image endcreds = "images/thanks for playing.png"
@@ -38,6 +35,24 @@ label splashscreen:
     with Pause(1.0)
 
     return
+
+# Sprite Positions -Arthur
+# transform posLeft:
+#     xpos -5           
+#     ypos 100   
+
+# transform posRight:
+#     xpos 800           
+#     ypos 100  
+
+transform moveinleft:
+    xpos -0.05
+    ypos 0.2
+
+transform moveinright:
+    xpos 0.65
+    ypos 0.15
+
 
 # The game starts here.
 label start:
@@ -96,17 +111,13 @@ label rachels_bedroom_start:
 
     "All this movement seems to be getting on the redhead's nerves, as she furrows her brow in discomfort. Her eyes remain shut."
 
-    show ra default with moveinleft:
-        xpos -0.05
-        ypos 0.2
+    show ra default at moveinleft
 
     ra "Moni, your sweater keeps tickling my arm hair."
 
     "Monique, the brunette, shifts a bit to the right to give her friend some much needed space."
 
-    show mo concern with moveinright:
-        xpos 0.65
-        ypos 0.15
+    show mo concern at moveinright
 
     mo "Whoops, sorry, Rach."
 
@@ -324,15 +335,11 @@ label halloween_party:
 
     "Rachel's anxiety is made noticeable by Monique, who offers a small smile of sympathy."
 
-    show mo concerncos with moveinright:
-        xpos 0.65
-        ypos 0.15
+    show mo concerncos at moveinright
     mo "Hey, you don't look too hot."
     mo "It's not too late for us to turn back."
 
-    show ra timidcos with moveinleft:
-        xpos -0.05
-        ypos 0.2
+    show ra timidcos at moveinleft
     ra "No, we're already here."
     ra "And, it's fine, really."
     ra "My costume hides most of my defining features, so I doubt anyone will notice me."
@@ -418,15 +425,13 @@ label halloween_party:
 
     "This party just went from a 0 to a 3."
 
-    show mo defaultcos with moveinright:
-        xpos 0.65
-        ypos 0.15
+    show mo defaultcos at moveinright
     
     mo "Oh my God, Rach!! They have glowsticks!"
 
-    show ra defaultcos with moveinleft:
-        xpos -0.05
-        ypos 0.2
+    show ra defaultcos at moveinleft
+
+
     "Pulling her attention back to Monique, Rachel peers up from under her hood, and notices that people had different colored glowstick wristbands."
 
     "She spots a small table next to the snacks containing different piles of different glowstick colors along with labels, though she can't make out the words from this distance."
@@ -674,14 +679,12 @@ label halloween_party:
     if sendText == False:
         "As people rush by her in a blur, Rachel is able to make out a sparkly green costume heading towards her, squeezing past the traffic."
 
-    show mo concerncos with moveinright:
-        xpos 0.65
-        ypos 0.15
+    show mo concerncos at moveinright
+
     mo "What's with the commotion?"
 
-    show ra defaultcos with moveinleft:
-        xpos -0.05
-        ypos 0.2
+    show ra defaultcos at moveinleft
+
     ra "Maybe the party is over?"
 
     show ra frowncos
@@ -888,9 +891,8 @@ label celine_party:
     scene bg partyinterior
     with wipeleft
 
-    show ra defaultcos with moveinleft:
-        xpos -0.05
-        ypos 0.2
+    show ra defaultcos at moveinleft
+
     "Making her way back to the snack table, Rachel makes sure to keep her head down."
 
     show ra shockedcos
@@ -906,9 +908,8 @@ label celine_party:
 
     "Oh no."
 
-    show ce worrycos with moveinright:
-        xpos 0.65
-        ypos 0.15
+    show ce worrycos at moveinright
+    
     ce "Oh my gosh, I'm so sorry!!"
 
     "It's Celine."
@@ -1211,12 +1212,18 @@ label celine_party:
     ce "...Stay the hell away from me."
     return
 
+transform celinepartyleft:
+    xpos -0
+    ypos 0.15
+
+transform celinepartyright:
+    xpos 0.7
+    ypos 0.15
+
 label celine_party_text:
     "Before Celine can respond, a familiar voice breaks through all the noise."
 
-    show mo concerncos with moveinright:
-        xpos 0.7
-        ypos 0.15
+    show mo concerncos at celinepartyright
     show ra shockedcos
     show ce defaultcos
     mo "There you are!"
@@ -1227,9 +1234,7 @@ label celine_party_text:
     mo "Oh."
     mo "Oh no."
     hide mo with moveoutright
-    show mo gentlecos with moveinleft:
-        xpos -0
-        ypos 0.15
+    show mo gentlecos at celinepartyleft
     mo "Hey...Celine..!"
     mo "What brings you here?"
 
@@ -1584,9 +1589,9 @@ label cliff_party:
 
     "She doesn't even have time to react before it pounces, sending her to the ground as it licks her face, tail creating an afterimage from the sheer speed of its wagging."
 
-    show ra timidcos with moveinleft:
-        xpos -0.05
-        ypos 0.2
+    show ra timidcos at moveinleft
+        # xpos -0.05
+        # ypos 0.2
     ra "Aww, hey buddy!"
 
     "The dog let out a 'Borf!' and continued its relentless onslaught of slobber."
@@ -1597,7 +1602,7 @@ label cliff_party:
 
     "Rachel glances slightly towards the voice, coming from the person in the handmade knight costume."
 
-    show ra smile
+    show ra smilecos
     ra "Yeah?"
 
     "The stranger nods."
@@ -1639,9 +1644,8 @@ label cliff_party:
 
     "There's no way."
 
-    show cl sneercos with moveinright:
-        xpos 0.65
-        ypos 0.2
+    show cl sneercos at moveinright
+
     cl "Well well well well well well well."
     cl "Well."
 
@@ -1694,7 +1698,7 @@ label cliff_party:
     ra "Don't you have those tabletop game meetings on Fridays??"
     ra "Why aren't you there with your loser friends?"
 
-    show eyerollcos
+    show cl eyerollcos
     cl "First of all, they aren't losers."
     cl "Real rich coming from the likes of you."
     cl "And SECOND, our meeting got cancelled."

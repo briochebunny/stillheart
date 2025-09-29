@@ -21,7 +21,8 @@ transform character_down:
     xalign 0.5
     yalign -0.3
 
-image splash = "gui/spooktober logo.png"
+image splash = "images/spooktober logo.png"
+image endcreds = "images/thanks for playing.png"
 
 # adding a splash screen
 label splashscreen:
@@ -95,16 +96,16 @@ label rachels_bedroom_start:
 
     "All this movement seems to be getting on the redhead's nerves, as she furrows her brow in discomfort. Her eyes remain shut."
 
-    show ra default with customMove:
-        xpos -0.1
+    show ra default with moveinleft:
+        xpos -0.05
         ypos 0.2
 
     ra "Moni, your sweater keeps tickling my arm hair."
 
     "Monique, the brunette, shifts a bit to the right to give her friend some much needed space."
 
-    show mo concern with customMove:
-        xpos 0.7
+    show mo concern with moveinright:
+        xpos 0.65
         ypos 0.15
 
     mo "Whoops, sorry, Rach."
@@ -172,6 +173,7 @@ label rachels_bedroom_start:
     mo "Well anyway, we were talking a bit and he was totally flirting with me."
 
     show mo gentle
+    show ra default
     "It's at this point that Monique starts to look reluctant to speak, as though her nerves came flooding back."
 
     mo "But, um, he asked if I was busy today and I said no, so..."
@@ -305,7 +307,6 @@ label halloween_party:
 
     "Not to mention, teenagers can be ruthless and cold."
 
-
     "They are not particularly welcoming of outsiders."
 
     "All of these things together create the most abhorrent environment."
@@ -313,7 +314,7 @@ label halloween_party:
     "They are not places for fun."
 
     $ renpy.music.set_audio_filter("music", walkie_talkie_af, replace=True)
-    play music "Rattled.wav" volume 0.5
+    play music "Rattled.wav" volume 0.5 fadein 1.0
     scene bg partyexterior
     with fadeLong
 
@@ -323,39 +324,54 @@ label halloween_party:
 
     "Rachel's anxiety is made noticeable by Monique, who offers a small smile of sympathy."
 
-    show mo concernCOS with moveinright
+    show mo concerncos with moveinright:
+        xpos 0.65
+        ypos 0.15
     mo "Hey, you don't look too hot."
     mo "It's not too late for us to turn back."
 
+    show ra timidcos with moveinleft:
+        xpos -0.05
+        ypos 0.2
     ra "No, we're already here."
     ra "And, it's fine, really."
     ra "My costume hides most of my defining features, so I doubt anyone will notice me."
 
+    show ra smilecos
     "Clad in a dark, grim reaper cloak with fraying edges, Rachel pulls the hood further over her head with the hopes of obscuring her identity further."
 
     "Not the most creative costume, but if it does the job of keeping her out of the host's line of sight, then it's good enough for her."
 
+    show mo gentlecos
     mo "Speaking of costumes, I didn't overdo it, did I?"
 
     "Monique gives Rachel a little twirl of her costume; a sparkly green fairy outfit."
 
+    show ra shockedcos
     ra "No no, you look great, Moni!"
+    show ra defaultcos
     ra "You're supposed to be that one green fairy from those animated movies, right?"
 
+    show mo defaultcos
     mo "Oh my God, NO!"
     mo "I'm Ashia, from Blinx Club!"
 
+    show ra smilecos
     ra "Hm, doesn't ring a bell."
     ra "Green animated fairy it is."
 
+    show ra timidcos
     mo "raCHEL!!"
 
     "With a playful smack from Monique, a chuckle from Rachel, and her spirits lightly eased, Rachel's gaze fell back on that house."
 
+    show ra smilecos
     "When she's with Monique, it feels like all her troubles wash away into nothing."
 
     "She almost forgot about the house she had yet to step foot into."
 
+    show ra defaultcos
+    show mo smilecos
     "But, you can only put things off for so long."
 
     "Her gaze falls back onto Monique, who has already taken a step up the porch stairs, waving for Rachel to follow."
@@ -402,8 +418,15 @@ label halloween_party:
 
     "This party just went from a 0 to a 3."
 
+    show mo defaultcos with moveinright:
+        xpos 0.65
+        ypos 0.15
+    
     mo "Oh my God, Rach!! They have glowsticks!"
 
+    show ra defaultcos with moveinleft:
+        xpos -0.05
+        ypos 0.2
     "Pulling her attention back to Monique, Rachel peers up from under her hood, and notices that people had different colored glowstick wristbands."
 
     "She spots a small table next to the snacks containing different piles of different glowstick colors along with labels, though she can't make out the words from this distance."
@@ -412,6 +435,7 @@ label halloween_party:
 
     ra "Wanna grab some?"
 
+    show mo smilecos
     "Monique beams and grabs Rachel's wrist, pulling them both to the glowsticks."
 
     "Now upon closer inspection, Rachel could make out the labels and their assigned colors."
@@ -420,13 +444,17 @@ label halloween_party:
 
     "Monique grabs a green glowstick for herself and a blue one for Rachel."
 
+    show mo defaultcos
     mo "Hey, mine goes with my costume!"
 
+    show ra smilecos
     ra "Oh yeah, it does."
+    show ra defaultcos
     ra "I don't know if a glowstick would be good for me to have, though."
     ra "Wouldn't it...draw unwanted attention?"
 
     mo "Oh PLEASE, look around! Everyone has one!"
+    show mo gentlecos
     mo "I think you'd get more attention if you didn't."
 
     ra "I guess so."
@@ -437,48 +465,62 @@ label halloween_party:
 
     mo "Actually, maybe it would be better if you had a pink one, so no one tries to approach you?"
 
+    show ra frowncos
     ra "I don't think that'd be a problem, I mean I'm covered from head to toe in a black cloak."
     ra "No one would even know what I look like to even want to approach me."
 
     "Despite her words, it appears that she doubts the validity of them."
 
+    show mo defaultcos
     mo "You never know, some people are into the whole mysterious thing."
 
     "Monique hands Rachel a pink glowstick, just in case."
 
     "The redhead slips the blue glowstick off her wrist and sets it down back in the pile, with the pink one now in its place."
 
+    show ra defaultcos
     ra "So like, what now?"
     ra "You know parties better than me, so..."
     ra "What do y'all do for fun?"
 
+    show mo smilecos
     mo "Well, normally I find where the games are and go from there, but since we're laying low, I think we can pass on those for now."
 
     "Rachel's expression twists slightly."
 
+    show ra frowncos
     ra "No, wait, I don't wanna be the reason you miss out on your games."
 
+    show mo gentlecos
     mo "You aren't the reason for anything!"
+    show mo defaultcos
     mo "It's your first party in like, forever, I wanna help you make it fun!"
     mo "Actually, elementary school dances don't count, so this is officially your first party in my own humble opinion."
     mo "And because of that, we're gonna figure out what you like at parties, not what I do already."
+    show mo gentlecos
     mo "Okay?"
 
+    show ra sadcos
     ra "..."
+    show ra smilecos
     ra "...Mkay."
 
     "Rachel has a seemingly difficult time telling her \"no.\""
 
     "It appears to have become a pattern over the years."
 
+    show mo smilecos
     "Monique smiles and begins scanning the room."
 
     mo "I think we should start in here. What do you think?"
 
     ra "We should..."
 
+    show mo defaultcos
+    show ra shockedcos
     "Before she can make a decision, a small, wrangled noise pulls itself from Monique's throat."
 
+    show ra defaultcos
     "It was probably a sound of excitement, to be honest..."
 
     mo "Rachel, look!! There he is!"
@@ -493,9 +535,11 @@ label halloween_party:
 
     mo "Oh oh oh, look! He's looking around for me, I think!"
 
+    show ra frowncos
     ra "Hm."
     ra "Sounds about right."
 
+    show mo gentlecos
     "Monique's toothy grin settles on her friend, and she falters for a moment."
 
     "It's no surprise that Rachel isn't the most enthused at the prospect of her friend's eye candy showing up to the party."
@@ -503,47 +547,61 @@ label halloween_party:
 
     "After all, it meant that her friend would leave her alone to go socialize with him, and while she was okay with it at home, she couldn't help but regret her decision just a smidge."
 
+    show ra sadcos
     "Anxiety wells in her stomach."
 
+    show mo concerncos
     "As though she could sense it, Monique gently rests a hand on Rachel's forearm."
 
     mo "Hey...you sure you'll be okay?"
+    show mo gentlecos
     mo "It's not too late to back out and go home."
     mo "We can chill at your place and watch scary movies while the neighborhood kids come by for trick-or-treating!"
     mo "It's no issue at all, seriously."
     mo "You can back out at any time."
 
+    show ra frowncos
     ra "No."
+    show ra timidcos
     ra "I mean, n-no thanks, I want to do this."
 
     "She does not."
 
     ra "I gotta face these fears eventually, right?"
+    show ra smilecos
     ra "Go talk to him, I'll...be here."
 
+    show mo concerncos
     mo "And that's what you genuinely want?"
 
+    show ra sadcos
     "No."
 
+    show ra smilecos
     ra "Yeah."
 
     "The two of them knew fully well that Rachel wasn't being honest, but Monique knows how stubborn her friend can be and chooses not to press further."
 
     mo "Alright Rach, I believe you."
+    show mo gentlecos
     mo "And my phone will be on me, like, the whole time, so if you wanna leave just shoot me a text and I'll head over!"
 
+    hide mo with moveoutright
     "Rachel nods, and with that she watches her friend gravitate towards the object of her attraction, her sparkly costume twinkling under the lights."
 
+    show ra defaultcos
     "Rachel, now alone, stands awkwardly in the living room, watching other people socialize with the distinct feeling of not belonging."
 
     "All these people, talking and having fun without any cares in the world...their nights would sour immediately if they knew she was hiding in the crowd."
 
     "After all, the only reason she's even here is so her friend can hang out with someone else."
 
+    show ra sadcos
     "What was even the point of being here besides inconveniencing other people?"
 
     "Her eyes almost well up with self-inflicted guilt."
 
+    show ra defaultcos
     "Swallowing the lump in her throat, she decides that if she's here, she may as well take a look around the house."
 
     "It has been a while, after all."
@@ -603,25 +661,35 @@ label halloween_party:
     scene bg partyinterior
     with wipeleft
 
-    play music "Breath.wav" fadein 0.5
-
-
     "--?!"
 
     "There's a sudden rush of people, and an increase in the chatter."
+
+    "It looks like they're all heading for the exit."
+
+    play music "Breath.wav" #fadein 2.0
 
     "Did something happen?"
 
     if sendText == False:
         "As people rush by her in a blur, Rachel is able to make out a sparkly green costume heading towards her, squeezing past the traffic."
 
+    show mo concerncos with moveinright:
+        xpos 0.65
+        ypos 0.15
     mo "What's with the commotion?"
 
+    show ra defaultcos with moveinleft:
+        xpos -0.05
+        ypos 0.2
     ra "Maybe the party is over?"
 
+    show ra frowncos
     "She wishes that were the case, but a sense of dread and impending doom give her the feeling that it's something else entirely."
 
+    show mo gentlecos
     mo "C'mon, let's go check it out!"
+    show mo defaultcos
     mo "We were just leaving, anyway, so might as well see what the fuss is about before we go."
 
     "The two of them follow the small crowd, luckily not needing to shove past too many people since not everyone has caught wind of whatever was going on outside."
@@ -638,6 +706,8 @@ label halloween_party:
     "But, no one seems to care about her."
 
     "At this time, their eyes are all locked on a figure, standing at the end of the pathway leading up to Celine's house, shroud in shadow."
+
+    "Biscuit, who had trailed after the crowd, now stands near the front of the porch, hackles raised as a growl rumbles in her throat."
 
     "It's hunching over, and slowly making its way towards the house."
 
@@ -663,18 +733,37 @@ label halloween_party:
 
     ra "Is that-?"
 
-    show mi partydark
+    show mi partydark with dissolve
     "There stands Mia before the crowd."
 
     "She is as beautiful as ever, even in this decrepit state she finds herself in."
 
     "And, at the sound of Rachel's voice, her head shoots up to leer directly at her."
 
-    "With her palm outstretched, breath labored, and stiff, creaking movements, nobody could possibly prepare for her sudden dash up the porch, her nails aimed directly for Rachel's heart."
+    "With her palm outstretched, breath labored, and stiff, creaking movements, nobody could possibly prepare for her sudden dash up the porch..."
+
+    "...her nails aimed directly for Rachel's heart."
+    jump endcredits
+
+label endcredits:
+    $ renpy.music.set_volume(0.5)
+
+    scene black
+    with Pause(3.0)
+
+    show endcreds with dissolve
+    with Pause(8.0)
+
+    stop music fadeout 2.0
+    scene black with dissolve
+    with Pause(3.0)
 
     return
 
-    
+
+
+
+
 
 
 
@@ -799,18 +888,27 @@ label celine_party:
     scene bg partyinterior
     with wipeleft
 
+    show ra defaultcos with moveinleft:
+        xpos -0.05
+        ypos 0.2
     "Making her way back to the snack table, Rachel makes sure to keep her head down."
 
+    show ra shockedcos
     "A little too down, however, as she ends up running into somebody on her way there."
 
+    show ra frowncos
     "The cup of punch the person was holding ends up splashing onto Rachel's cloak, drenching the front in a sticky red substance."
 
     "Rachel looks up to apologize for not watching where she was going, but freezes the moment she catches a glimpse of who it is."
 
+    show ra shockedcos
     "Oh."
 
     "Oh no."
 
+    show ce worrycos with moveinright:
+        xpos 0.65
+        ypos 0.15
     ce "Oh my gosh, I'm so sorry!!"
 
     "It's Celine."
@@ -821,6 +919,7 @@ label celine_party:
 
     "Also, Celine is a bit taller than her, and the hood of her cloak is still pulled up over her head, so maybe her face is still a bit hidden?"
 
+    show ra timidcos
     ra "Oh, um, it's alright."
 
     ce "Here, I'll help you clean this up."
@@ -831,9 +930,11 @@ label celine_party:
 
     ce "Ah-it's a bit hard to see if I'm helping at all since the fabric is black..."
 
+    show ra smilecos
     ra "It's okay, really."
     ra "You really don't have to do that.."
 
+    show ce smilecos
     ce "Pshh, nonsense."
     ce "I spilled my drink on you so it makes sense that I help you get it out!"
     ce "I hope I didn't ruin your night!"
@@ -846,34 +947,46 @@ label celine_party:
             pass
     #there are two bc i think its funny heh
 
+    show ra timidcos
     ra "Yeah, it's fun."
     ra "I uh, like what you did with the place."
+    show ra smilecos
     ra "Decorations are real...lively?"
 
+    show ce sneercos
     ce "HA, that was awful!"
+    show ce smilecos
     ce "I'll need to kick you out if you make another shitty pun like that."
 
     "Oh, that wasn't even intentional."
 
+    show ra timidcos
     ra "Hahaha yeahhh..that'd suck."
 
+    show ra smilecos
     "So far Celine doesn't appear to recognize Rachel, but alarm bells can't stop going off for her."
 
     "She looks visibly jittery."
 
+    show ce worrycos
     ce "Hey, you okay?"
     ce "You look like you're boutta jump outta your skin."
+    show ce sneercos
     ce "I know, my costume is terrifying."
 
+    show ra timidcos
     "Rachel forces out a chuckle."
 
     "She needs to find a way out of this conversation, FAST."
 
+    show ce smilecos
     ce "So...you were heading to the snack table when I bumped into you, right?"
     ce "I'll fix you a plate!"
 
+    show ra shockedcos
     "Before Rachel can protest, Celine already begins grabbing different foods from the table, piling it with an absurd amount of snacks."
 
+    show ra defaultcos
     ce "I'm not sure what you like, so I just grabbed you a bunch of everything."
     ce "Help yourself to the punch, too!"
     ce "It's my own blend of juice and sodas, REAL good if I say so myself."
@@ -884,37 +997,49 @@ label celine_party:
 
     "Despite how desperate Rachel is to leave this conversation, she can't help but partly wish it could go on further."
 
+    show ra sadcos
     "She misses talking with her peers."
 
     "But, she knows it's fleeting, and that the longer it goes on, the more likely she is to be caught."
 
+    "Maybe now's the time to leave."
+
     menu: 
         "Distract Celine.":
+            show ra timidcos
             ra "Haha...um, I might be sick if I drink anymore punch."
             ra "...It's almost too good!"
+            show ra smilecos
             ra "I was...uhh..."
             ra "Planning on getting something to eat..."
+            show ra timidcos
             ra "to see if that...helped...?"
 
+            show ce worrycos
             ce "Wow, you really don't sound good, are you okay?"
             ce "Need to sit down for a bit?"
 
+            show ra shockedcos
             "Before Rachel can protest, Celine takes her hand in her own and raises the other as if to check her temperature."
 
             "And, a little too late, Rachel realizes that she's staring directly into Celine's face, her cloak no longer obscuring her vision."
 
             "And, by extension, her face."
 
+            show ce angrycos
             "Celine retracts her hand as though she were burned, anger brewing in her expression."
         "Slowly back away.":
+            show ra frowncos
             "Rachel tries using Celine's turned back as an opportunity to disappear back into the crowd." 
 
             "Slowly backing up, her eyes stay glued onto the other girl."
 
             "She prepares to make a dash into a dark corner somewhere for the rest of the night, if all goes well."
 
+            show ra shockedcos
             "But, unfortunately she's too distracted with Celine, and fails to notice that she accidentally walked into another guest who pulls on her hood in annoyance."
 
+            show ra frowncos
             "Shoot."
 
             "And, just her luck..."
@@ -923,13 +1048,16 @@ label celine_party:
 
             ce "Anyway, I don't bite, y'know-" 
 
+            show ce neutralcos
             "They both freeze as they enter an unspoken staring context, though Celine is the first to lose."
 
+    show ce angrycos
     ce "raCHEL?!"
 
     if celineFirst == False:
         jump celine_party_2
     
+    show ra frowncos
     "Well, shit."
 
     "If only someone were here to swoop in and save Rachel from this absolutely atrocious position she finds herself in."
@@ -945,6 +1073,7 @@ label celine_party:
 
     ra "Never."
 
+    show ce sneercos
     ce "HA!"
     ce "So you're just here to cause a scene then, huh?"
     ce "Sounds about right."
@@ -954,11 +1083,15 @@ label celine_party:
     ra "No??"
     ra "I freaking hate attention, where the hell did you get that info??"
 
+
     ce "I don't need to hear it from anywhere, it's so obvious."
+    show ce eyerollcos
     ce "You love when things revolve around you, you're always trying to play the victim card so people fawn over you."
     ce "And you hate when people call you out on your bullshit."
+    show ce angrycos
     ce "Well, too bad Rachel."
     ce "I can see right through you."
+    show ra sadcos
     ce "You're a two-faced bitch."
 
     "Celine is probably the only person in the world who manages to be so scary in a deer costume."
@@ -968,48 +1101,63 @@ label celine_party:
     "She's terrifying."
 
     ra "..."
+    show ra frowncos
     ra "I wish I had your confidence."
     ra "You're dead wrong."
 
     "Her voice still wavers, despite her attempted bravado."
 
+    show ce sneercos
     ce "Oh, real funny word choice, Rachel."
+    show ce angrycos
     ce "What even is your costume anyway?"
     ce "The grim reaper? Hilarious."
+    show ce eyerollcos
     ce "You're honestly not even trying to hide it anymore."
 
+    show ra shockedcos
     ra "!!"
+    show ra frowncos
     ra "T-That was entirely unintentional!"
     ra "I just needed something simple and subtle, that's all."
     ra "You're reading into it."
 
+    show ce sneercos
     ce "Oh, gaslighting now too?"
     ce "Looks like you CAN go lower."
     ce "Wish I could say I'm surprised."
 
+    show ra sadcos
     "Rachel's eyes frantically dart across the room, trying to find a way out of this conversation."
 
     "No matter how hard she tries, her words come out all wrong."
 
     "But, Celine is relentless."
 
+    show ce angrycos
     ce "You're disgusting."
     ce "Showing up to MY house, of all places, for MY party-"
+    show ce eyerollcos
     ce "-knowing how I feel about you."
     ce "How EVERYBODY feels about you..."
+    show eye angrycos
     ce "It's like you don't even care about how others feel."
     ce "You'd rather make everyone else uncomfortable as long as you get what you want."
     ce "I'd tell you to get the hell out of my house, but I don't wanna be a bad host-"
 
+    show ra frowncos
     "-NOW she thinks about being a bad host??-"
 
     ce "-So instead I'll tell you to leave me the hell alone for the rest of your time here."
     ce "You won't touch anything, you won't leave the living room, and you won't talk to anyone."
     ce "As a matter of fact, if you so much as LOOK at anyone, I'll smack the shit out of you for disturbing my guests."
 
+    show ra sadcos
     ra "Celine..."
+    show ra frowncos
     ra "I'm sorry I'm hurting you, but you have to understand I-"
 
+    show ce sneercos
     ce "Disrespectfully I don't give a shit about what you have to say to me."
     ce "I don't think I've ever hated anyone more than I hate you."
     ce "The only reason I'm tolerating you being here is because I know Mia liked you."
@@ -1019,11 +1167,13 @@ label celine_party:
     ra "Celine, what happened with Mia..."
     ra "It hurts me as much as it hurts you."
 
+    show ce angrycos
     "Celine's face contorts furiously."
 
     "Way to go, Rachel."
 
     ce "Are you..."
+    show ra sadcos
     ce "Are you kidding me?"
 
     "Celine scoffs in disbelief."
@@ -1031,31 +1181,44 @@ label celine_party:
     ce "You've gotta be joking."
     ce "There's no way you just said that to me."
     ce "It hurts YOU as much as it hurts me?!"
+    show ce sneercos
     ce "I'd laugh if I could."
     ce "Do I need to remind you that you're not the one whose sister vanished into thin air?"
+    show ce angrycos
     ce "You're not the one who has to deal with the fact that everyone else has moved on but you."
     ce "My friends moved on, the police moved on..."
+    show ce eyerollcos
     ce "Hell, even my own parents have moved on."
+    show ce angrycos
     ce "Nobody even cares about her anymore, Rachel."
     ce "How could you possibly understand, when it's your own fault she's gone?!"
     ce "You refused to tell the police anything, even though you KNOW what happened because you were there!!"
     ce "And because of you, they have nothing to work with."
+    show ce defaultcos
     ce "You did something, I know you did."
     ce "I don't have proof, but I can tell when someone's guilty, and it's written all over your ugly face."
     ce "It's all your fault."
+    show ce angrycos
     ce "And I have to watch you get away, scot-free, while Mia's still out there."
     ce "If it weren't for you, she'd still be here."
     ce "She'd be here, and she'd be happy."
+    show ce defaultcos
     ce "I'd be happy."
 
     ra "..."
 
+    show ce angrycos
     ce "...Stay the hell away from me."
     return
 
 label celine_party_text:
     "Before Celine can respond, a familiar voice breaks through all the noise."
 
+    show mo concerncos with moveinright:
+        xpos 0.7
+        ypos 0.15
+    show ra shockedcos
+    show ce defaultcos
     mo "There you are!"
     mo "I got your text, is every-"
 
@@ -1063,16 +1226,24 @@ label celine_party_text:
 
     mo "Oh."
     mo "Oh no."
+    hide mo with moveoutright
+    show mo gentlecos with moveinleft:
+        xpos -0
+        ypos 0.15
     mo "Hey...Celine..!"
     mo "What brings you here?"
 
+    show ce eyerollcos
     ce "Oh, you know, just hosting MY party."
     ce "MY party, which Rachel apparently thought was a good idea to come to."
 
+    show ra sadcos
     ra "Wasn't my idea, for the record."
 
+    show ce angrycos
     ce "How about you worry about your criminal record instead?"
 
+    show mo angrycos
     mo "Hey, lay off Rachel!"
     mo "She's not all that, okay?"
 
@@ -1088,6 +1259,7 @@ label celine_party_text:
 
     mo "Well, if the shoe fits!"
 
+    show ra frowncos
     ra "Guys-"
 
     ce "What the hell are you two even doing at my house anyway?!"
@@ -1096,9 +1268,11 @@ label celine_party_text:
     mo "No, insulting you is just the bonus!"
     mo "I'm here for someone better than you, Rachel just agreed to tag along out of the goodness of her heart."
 
+    show ce sneercos
     ce "Oh yeah?"
     ce "I didn't think there could be any \"goodness\" left in that cold, still heart of hers."
 
+    show ra defaultcos
     ra "Can we calm down-?"
 
     mo "Yeah, well, you'd notice if you took two seconds to pull your head out of your own ass."
@@ -1108,6 +1282,7 @@ label celine_party_text:
 
     mo "Not for you, since you clearly have a lotta experience in being a huge bitch."
 
+    show ce angrycos
     ce "You call me a bitch again and I'll be mopping the floor with you."
 
     mo "Fine then!"
@@ -1118,6 +1293,7 @@ label celine_party_text:
     mo "Leave Rachel alone, and I leave you alone."
     mo "It's that easy!"
 
+    show ce angrycos
     "Celine's eyes narrow into a harsh glare."
 
     ce "Bully?!"
@@ -1135,8 +1311,11 @@ label celine_party_text:
     mo "Or what?"
     mo "You'll call the police on us?"
 
+    show ce neutralcos
     ce "Yes."
 
+    show mo concerncos
+    show ra frowncos
     mo "..."
 
     "Monique turns to Rachel for the first time in this entire encounter with a whisper."
@@ -1147,8 +1326,10 @@ label celine_party_text:
 
     "That's their cue to leave."
 
+    show mo angrycos
     mo "Fine, we'll get out of your dead, damaged, dry hair."
 
+    show ra timidcos
     ra "Uh, we'll leave, is what she's trying to say."
 
     mo "I said what I said and I meant it."
@@ -1157,6 +1338,7 @@ label celine_party_text:
     return
 
 label celine_party_2:
+    show ra frowncos
     "Damnit."
 
     "Just her luck."
@@ -1168,8 +1350,10 @@ label celine_party_2:
     ra "Oh, great."
     ra "I can't seem to catch a break, can I?"
 
+    show ce eyerollcos
     ce "Oh, YOU can't catch a break?"
     ce "I should be the one saying that, actually."
+    show ce angrycos
     ce "What the hell are you doing here?!"
 
     "Rachel sighs exasperatedly."
@@ -1177,7 +1361,9 @@ label celine_party_2:
     ra "I'm just here for my friend, I'm not actually here for the party."
 
     ce "Yeah, right. I know you're just here to get on my nerves."
+    show ce sneercos
     ce "\"I'm just here for a friend!!!\""
+    show ce eyerollcos
     ce "PLEASE, save it for someone who's stupid enough to care."
 
     "Normally, Rachel would be much softer spoken and passive in a situation like this."
@@ -1186,34 +1372,46 @@ label celine_party_2:
 
     "But after the dumpster-fire encounter with Cliff, her reservations have gone down from 95\% to maybe 30\%."
 
+    show ra defaultcos
     ra "Okay fine, don't believe me."
     ra "Not like that's anything new, anyway."
+    show ra frowncos
     ra "I'm used to people thinking I'm a liar."
 
+    show ce smilecos
     ce "Aww, poor you, playing the victim card already?"
+    show ce neutralcos
     ce "You're so pathetic."
 
     ra "If I'm so pathetic, then what are you?"
     ra "You're stooping to my level by having this conversation with me."
+    show ra sadcos
     ra "Just kick me out and save yourself the trouble."
 
+    show ce eyerollcos
     "Celine scoffs, looking down her nose at Rachel."
 
     "They aren't too far off in height, but it feels like Celine is towering over her."
 
     ce "No, you deserve to stand here and listen to everything I have to say about you."
 
+    show ra frowncos
     ra "Ughh, I'd rather not."
     ra "I already had to deal with Cliff being stupid and bothering me, I don't really feel like having the same conversation twice."
 
+    show ce angrycos
     ce "You just got here and you're already harassing my guests?!"
 
     ra "NO???"
+    show ra shockedcos
     ra "Did you not hear what I just said?"
+    show ra frowncos
     ra "He harassed ME, not the other way around!"
 
+    show ce sneercos
     ce "Yeah, and I'm running for president."
     ce "You know, I may have believed your lies when we were kids, but I know better now."
+    show ce angrycos
     ce "I'm not the stupid little kid you still think I am."
 
     ra "Celine, I never thought you were stupid...who even told you that?"
@@ -1222,65 +1420,85 @@ label celine_party_2:
         jump celine_party_text
 
     ce "I don't need anyone to tell me to know it's true."
+    show ce neutralcos
     ce "You and Mia...you two were so close it makes me sick."
+    show ce angrycos
+    show ra sadcos
     ce "How could you just...tear her away from me like that?"
     ce "Even before she disappeared you were stealing her from me."
     ce "You started shutting me out in my own house."
     ce "You never gave me the time of day."
+    show ce neutralcos
     ce "Even when I looked up to you."
 
+    show ra defaultcos
     ra "Celine..."
 
+    show ce angrycos
     ce "Shut the hell up."
     ce "I hate you so damn much."
     ce "You stole everything from me, you ruined my life."
     ce "I don't wanna hear any useless apologies from you unless your apology is bringing back my sister."
+    show ce neutralcos
     ce "Everyone thinks she's dead but I know she's out there somewhere."
     ce "And I know she's crawling her way back here, little by little, just to exact karma upon you."
     ce "Because God knows you deserve everything that's coming to you."
 
     "They stare at each other in silence, despite the ongoing music."
 
+    show ce angrycos
     "Celine's face twists into one of disgust."
 
     ce "Really?"
     ce "Nothing to say for yourself?"
 
+    show ra sadcos
     ra "I feel like no matter what I say, you'll get mad at me again."
 
     ce "!!"
 
+    show ra defaultcos
     ra "Celine, listen..."
     ra "I'm...sorry you felt singled out when we were kids."
     ra "I never meant for you to feel that way."
 
-    ce "Yeah, well, you did so you can't take it back."
-
     "Celine crosses her arms."
+
+    show ce eyerollcos
+
+    ce "Yeah, well, you did so you can't take it back."
 
     ra "I know, and you're right about one thing."
 
+    show ce defaultcos
     ce "?"
 
     ra "I do deserve everything that's coming to me."
+    show ra sadcos
     ra "I've been feeling so guilty for so many years, I just..."
     ra "I couldn't bring myself to say anything."
     ra "What happened with me and Mia..."
     ra "It changed me."
+    show ra defaultcos
     ra "I've hardly been able to come to terms with it myself, after all these years."
     ra "Freshman year feels so long ago, but also so recent."
     ra "It's weird, it feels fresh in my mind but buried so deep that I can hardly bring myself to resurface it all."
     ra "I wanted to tell the police, when they brought me in for questioning."
 
+    show ce neutralcos
     ce "...but you couldn't, huh?"
 
+    show ra sadcos
     "Rachel nods shamefully."
 
+    show ce eyerollcos
     ce "Well, I'm not the police, so you could have at least started by telling me."
     ce "I think I deserve it after all this time."
 
+    show ra defaultcos
     ra "..."
 
+    show ce defaultcos
     ce "Rachel, I need to know."
     ce "Tell me what happened to my sister."
 
@@ -1292,30 +1510,41 @@ label celine_party_2:
     ra "..."
     ra "Okay."
     ra "It was four years ago, as you know."
-    ra "Mia was dealing with...problems."
+    ra "Mia was dealing with..."
+    show ra sadcos
+    ra "...problems."
+    show ra defaultcos
     ra "Problems she only told me about."
 
     "Rachel swallows thickly, her pulse quickening beyond the beat of the music."
 
     ra "She, um..."
     ra "...decided she wanted to get away from them, I guess."
+    show ra sadcos
     ra "A-and, asked me to run away with her."
     ra "I said yes, and-"
 
+    show ra frowncos
     "Her mind screeches to a stop, all of a sudden."
 
     "It appears she can't bring herself to vocalize what happened just yet."
 
-    ra "Actually, never mind, I'm not comfortable sharing this with you right now."
+    ra "Actually, never mind."
+    ra "I don't think I feel comfortable sharing this with you right now."
 
     ce "..."
+    show ce angrycos
     ce "You seriously expect me to believe that?"
+    show ce sneercos
     ce "Mia? Running away?"
     ce "I'd laugh if I didn't wanna actively strangle you."
     ce "You just can't stop with the lies, can you?"
 
+    show ra shockedcos
     ra "No, Celine, I wasn't lying-!"
 
+    show ce angrycos
+    show ra defaultcos
     ce "I don't wanna hear it."
     ce "You make me sick."
     ce "I never should've said anything to you."
@@ -1324,6 +1553,7 @@ label celine_party_2:
     ce "If I see you lurking anywhere around here within the next 15 minutes, I swear I'll call the police."
     ce "Do not test me."
 
+    hide ce with moveoutright
     "Celine stomps off to another part of the house, probably so she wasn't tempted with the urge to strangle Rachel."
 
     "Left alone at the snack table, Rachel lets out a sigh of pure exhaustion."

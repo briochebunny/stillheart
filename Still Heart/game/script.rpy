@@ -270,11 +270,11 @@ label rachels_bedroom_start:
 
     menu:
         "Insist that she goes.":
-            call rachbedroom_insist_mo_goes
+            call rachbedroom_insist_mo_goes from _call_rachbedroom_insist_mo_goes
         "Attempt to dissuade her.":
-            call rachbedroom_disuade_mo
+            call rachbedroom_disuade_mo from _call_rachbedroom_disuade_mo
         "Rachel will be fine":
-            call rachbedroom_ra_fine
+            call rachbedroom_ra_fine from _call_rachbedroom_ra_fine
 
     "There's a heavy silence for a moment, before Monique breaks out into a smile."
 
@@ -619,10 +619,10 @@ label halloween_party:
     menu:
         "Migrate back to the snack table.":
             $ celineFirst = True
-            call celine_party
+            call celine_party from _call_celine_party
         "DOG DOG DOG DOG DOG DOG":
             $ cliffFirst = True
-            call cliff_party
+            call cliff_party from _call_cliff_party
 
     scene bg partyinterior
     with wipeleft
@@ -659,11 +659,11 @@ label halloween_party:
     if celineFirst == True:
         menu:
             "DOG DOG DOG DOG DOG DOG":
-                call cliff_party
+                call cliff_party from _call_cliff_party_1
     else:
         menu:
             "Migrate back to the snack table.":
-                call celine_party
+                call celine_party from _call_celine_party_1
 
     stop music fadeout 2.0
     scene bg partyinterior

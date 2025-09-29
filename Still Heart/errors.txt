@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1244: expected 'simple_expression' not found.
-    show mo gentlecos at transform with moveinleft:
-                         ^
+File "game/screens.rpy", line 893: 'draggable' is not a keyword argument or valid child of the hbox statement.
+    draggable False
+             ^
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Mon Sep 29 00:40:23 2025
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Mon Sep 29 19:04:54 2025

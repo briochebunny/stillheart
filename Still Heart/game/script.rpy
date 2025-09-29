@@ -19,6 +19,7 @@ define mi = Character("Mia")
 
 init python:
     #image predictions -Arthur
+    # in the full game it's advised to predict only the used assets with each labels to prevent lag
     images_to_preload = [
         # USED sprites
         "ra default", "ra defaultcos", "ra frown", "ra frowncos", "ra sad", "ra sadcos", "ra shocked", "ra shockedcos", "ra smile", "ra smilecos", "ra timid", "ra timidcos",

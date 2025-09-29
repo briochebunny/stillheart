@@ -1584,6 +1584,9 @@ label cliff_party:
 
     "She doesn't even have time to react before it pounces, sending her to the ground as it licks her face, tail creating an afterimage from the sheer speed of its wagging."
 
+    show ra timidcos with moveinleft:
+        xpos -0.05
+        ypos 0.2
     ra "Aww, hey buddy!"
 
     "The dog let out a 'Borf!' and continued its relentless onslaught of slobber."
@@ -1594,6 +1597,7 @@ label cliff_party:
 
     "Rachel glances slightly towards the voice, coming from the person in the handmade knight costume."
 
+    show ra smile
     ra "Yeah?"
 
     "The stranger nods."
@@ -1612,6 +1616,7 @@ label cliff_party:
 
     "The stranger stiffens before carefully raising their visor to reveal a familiar face."
 
+    show ra shockedcos
     "Stranger" "I don't believe it!"
 
     menu:
@@ -1634,38 +1639,46 @@ label cliff_party:
 
     "There's no way."
 
+    show cl sneercos with moveinright:
+        xpos 0.65
+        ypos 0.2
     cl "Well well well well well well well."
     cl "Well."
 
     "Oh God."
 
+    show ra defaultcos
     ra "Sigh."
     ra "Hey, Cliff."
 
     cl "Look what the cat dragged in."
     cl "Or rather, should I say..."
 
+    show cl eyerollcos
     "He goes silent."
 
     cl "Uh, what even are you?"
     cl "Are you some homeless witch or something?"
 
+    show ra frowncos
     ra "...NO???"
     ra "I'm the grim reaper? I guess?"
 
+    show cl defaultcos
     cl "PFFFT WOWWW."
     cl "That's a bit on the nose, don't you think??"
     cl "That's gotta be intentional."
 
-
     ra "It really wasn't..."
 
     cl "Uh, yeah, sure."
+    show cl cockycos
     cl "What prompted you to even show your face here?"
     cl "No one even likes you."
 
     ra "Geez, what a charmer..."
 
+    show cl defaultcos
     cl "HAHA!"
     cl "No, really."
     cl "What gives?"
@@ -1681,6 +1694,7 @@ label cliff_party:
     ra "Don't you have those tabletop game meetings on Fridays??"
     ra "Why aren't you there with your loser friends?"
 
+    show eyerollcos
     cl "First of all, they aren't losers."
     cl "Real rich coming from the likes of you."
     cl "And SECOND, our meeting got cancelled."
@@ -1690,9 +1704,11 @@ label cliff_party:
 
     "In the middle of his scrutinization of Rachel, Cliff's eyes zero in on the pink glowstick shining through her costume sleeve."
 
+    show cl sneercos
     cl "Woah, no way."
     cl "Seriously, no WAY!"
 
+    show ra defaultcos
     ra "...?"
 
     cl "Let me guess, they go to another school?"

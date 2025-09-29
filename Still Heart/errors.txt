@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 345: show statement expects a non-empty block.
-    show ra timidcos at moveinleft:
-                                   ^
+File "game/script.rpy", line 1244: expected 'simple_expression' not found.
+    show mo gentlecos at transform with moveinleft:
+                         ^
 
-Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Sep 29 12:03:09 2025
+Ren'Py Version: Ren'Py 8.4.1.25072401
+Mon Sep 29 00:40:23 2025

@@ -336,12 +336,12 @@ label halloween_party:
 
     "Rachel's anxiety is made noticeable by Monique, who offers a small smile of sympathy."
 
-    show mo concerncos at posRight
+    show mo concerncos at posRight with moveinright
 
     mo "Hey, you don't look too hot."
     mo "It's not too late for us to turn back."
 
-    show ra timidcos at posLeft
+    show ra timidcos at posLeft with moveinleft
     ra "No, we're already here."
     ra "And, it's fine, really."
     ra "My costume hides most of my defining features, so I doubt anyone will notice me."
@@ -427,12 +427,12 @@ label halloween_party:
 
     "This party just went from a 0 to a 3."
 
-    show mo defaultcos at posRight
+    show mo defaultcos at posRight with moveinright
 
     
     mo "Oh my God, Rach!! They have glowsticks!"
 
-    show ra defaultcos at posLeft
+    show ra defaultcos at posLeft with moveinleft
 
 
     "Pulling her attention back to Monique, Rachel peers up from under her hood, and notices that people had different colored glowstick wristbands."
@@ -682,12 +682,12 @@ label halloween_party:
     if sendText == False:
         "As people rush by her in a blur, Rachel is able to make out a sparkly green costume heading towards her, squeezing past the traffic."
 
-    show mo concerncos at posRight
+    show mo concerncos at posRight with moveinright
 
 
     mo "What's with the commotion?"
 
-    show ra defaultcos at posLeft
+    show ra defaultcos at posLeft with moveinleft
 
     ra "Maybe the party is over?"
 
@@ -1146,7 +1146,7 @@ label celine_party:
     show ce eyerollcos
     ce "-knowing how I feel about you."
     ce "How EVERYBODY feels about you..."
-    show eye angrycos
+    show celine_party angrycos
     ce "It's like you don't even care about how others feel."
     ce "You'd rather make everyone else uncomfortable as long as you get what you want."
     ce "I'd tell you to get the hell out of my house, but I don't wanna be a bad host-"
@@ -1218,19 +1218,20 @@ label celine_party:
     return
 
 transform celinepartyleft:
-    xpos -0
+    xpos -0.05
     ypos 0.15
 
 transform celinepartyright:
-    xpos 0.7
+    xpos 0.65
     ypos 0.15
 
 label celine_party_text:
     "Before Celine can respond, a familiar voice breaks through all the noise."
 
-    show mo concerncos at celinepartyright
+    show mo concerncos at celinepartyright with moveinright
     show ra shockedcos
-    show ce defaultcos
+    show ce defaultcos with moveinright:
+        xpos 0.5
     mo "There you are!"
     mo "I got your text, is every-"
 
@@ -1239,7 +1240,12 @@ label celine_party_text:
     mo "Oh."
     mo "Oh no."
     hide mo with moveoutright
-    show mo gentlecos at celinepartyleft
+    show ce at celinepartyright with moveoutright
+    show mo gentlecos at Transform(xzoom=-1.0) with moveinleft:
+        xpos -0.05
+        ypos 0.15
+    show ra with moveinleft:
+        xpos 0.15
     mo "Hey...Celine..!"
     mo "What brings you here?"
 
@@ -1724,12 +1730,15 @@ label cliff_party:
     cl "Let me guess, they go to another school?"
     cl "You two met online?"
 
+    show ra frowncos
     ra "Who???"
     ra "Dude I can't ever hold a conversation with you, ever."
     ra "You make zero sense half the time."
 
+    show cl eyerollcos
     cl "Your glowstick, stupid."
     cl "It's pink, you're seeing someone."
+    show cl defaultcos
     cl "I mean, pfft, allegedly."
 
     "Internally, Rachel screams at Monique for ever thinking that the pink glowstick would be a better option than the blue."
@@ -1744,21 +1753,26 @@ label cliff_party:
 
     ra "...And what's it to you?"
 
+    show cl eyerollcos
     cl "Hm?"
 
     ra "What's it to you that I'm seeing someone?"
 
     cl "What's it to me?"
+    show cl sneercos
+    show ra defaultcos
     cl "HA!!"
     cl "You make it sound like I care about that stuff."
     cl "Heh, no."
     cl "I'm just wondering who in their right mind would ever wanna go out with you."
     cl "Maybe someone with a death wish."
 
+    show ra frowncos
     ra "Yeah?"
     ra "Only someone with a death wish would date me?"
     ra "WOuldn't that make you suicidal?"
 
+    show cl eyerollcos
     cl "HEY, I was doing charity work."
     cl "I mean, no one else was gonna do it."
 
@@ -1769,19 +1783,21 @@ label cliff_party:
     ra "Pretty sure I was your only girlfriend ever."
     ra "Am I wrong?"
 
-
     "Cliff lets out a huff, though it's hard to tell if it's one of irritation or arrogance."
 
     "Maybe both, honestly."
 
     cl "Uh, you're dead wrong."
+    show cl cockycos
     cl "You may have held the girlfriend title, but I have many suitors just lining up to bask in my radiance."
     cl "Actually, I should be thanking you."
     cl "Breaking up with you after your big fumble with Mia's case was probably the best thing to ever happen to me."
     cl "Everyone took pity on the poor guy who got manipulated into dating the walking Death Curse."
     cl "Thankfully I escaped in time, I'd hate to imagine what might've happened to me if I didn't leave you when I did."
 
+    show ra shockedcos
     ra "...You cannot be serious."
+    show ra defaultcos
     ra "You have no idea what that was like for me."
     ra "You weren't even there..."
     ra "You transferred here AFTER everything happened."
@@ -1790,45 +1806,58 @@ label cliff_party:
 
     cl "All clout is good clout, my dear."
 
+    show ra frowncos
     ra "You talk a lot of smack for a dude whose real name is Cliffington the Second."
 
+    show cl eyerollcos
     cl "SHSHHHHHH!!!"
 
+    show ra shockedcos
     "Cliff smacks a gloved hand over her mouth haphazardly."
 
     cl "Could you be any louder?!"
 
     "Rachel tears his hand off her face."
 
+    show ra frowncos
     ra "There's??? Music playing????"
     ra "Literally NO ONE heard me besides you."
     ra "There was no reason to put your gross glove hand on me."
 
     cl "Oh yeah, sure."
+    show cl cockycos
     cl "I'll have you know I come from an honorable family, put some respect on my name."
+    show cl eyerollcos
     cl "I won't have a nasty criminal such as yourself slander it."
 
+    show ra defaultcos
     ra "Look, I really didn't do anything."
 
+    show cl cockycos
     cl "Yeah? Then how come you were at the scene of the crime?"
     cl "How come you refuse to say anything about what happened to Mia?"
 
+    show ra sadcos
     "Rachel looks to the side in discomfort."
 
     ra "I..."
     ra "I can't."
     ra "You don't get it, I can't just talk about something like that."
 
+    show cl defaultcos
     cl "Can't or won't?"
     cl "You're the main suspect here."
     cl "Just because the police excused you from the case, doesn't mean jack to me."
     cl "You know something we all don't, it's obvious."
 
+    show ra frowncos
     ra "That's-"
 
+    show cl sneercos
     cl "You may have fooled the law with your fancy shmancy attorney, but I've got an ace up my sleeve."
     cl "I've got my own source of intel, and I'll make sure the town, no, the whole world knows about your crimes against humanity."
     cl "Watch your back, Rachel."
+    show cl eyerollcos
     cl "And for the love of everything Halloween, just get a mask next time."
     cl "It's like you didn't even try."
     return
@@ -1836,6 +1865,11 @@ label cliff_party:
 label cliff_party_text:
     "Before Cliff can finish that train of thought, they're both intercepted by a voice cutting through the noise."
 
+    show mo concerncos at celinepartyright with moveinright
+    show ra shockedcos
+    show cl eyerollcos with moveinright:
+        xpos 0.5
+    
     mo "There you are!"
     mo "I got your text, is every-"
 
@@ -1843,6 +1877,13 @@ label cliff_party_text:
 
     mo "Oh, great."
     mo "It's this guy again."
+    hide mo with moveoutright
+    show cl at celinepartyright with moveoutright
+    show mo gentlecos at Transform(xzoom=-1.0) with moveinleft:
+        xpos -0.05
+        ypos 0.15
+    show ra with moveinleft:
+        xpos 0.15
     mo "Don't you have something better to do than to bother Rachel?"
     mo "She doesn't want you bro, move on."
 
@@ -1850,9 +1891,11 @@ label cliff_party_text:
     cl "SHE was bothering ME."
     cl "I was minding my business with that cute dog when she stomped up from nowhere, and scared the poor thing off."
 
+    show ra frowncos
     ra "That's not?? How it happened????"
     ra "Biscuit loves me, she left because you were ruining the vibes."
 
+    show mo defaultcos
     mo "Yeah, and probably the air, too!"
     mo "I just know you're stinking up that sweater under all that cardboard."
 
@@ -1862,12 +1905,15 @@ label cliff_party_text:
     mo "Anyway, that's beside the point!"
     mo "Leave Rachel alone, she doesn't want you around."
 
+    show cl cockycos
     cl "Yeah? You think anyone here wants HER around?"
     cl "You people can be so selfish sometimes."
     cl "You expect everyone to be cool with a potential murderer just hanging out with them, like nothing's wrong?"
-    cl "‘Carry on guys, pay no mind to the psychopath 5 feet from you!'"
+    show cl sneercos
+    cl "\"Carry on guys, pay no mind to the psychopath 5 feet from you!\""
     cl "That's how dumb you guys sound."
 
+    show mo angrycos
     mo "Oh, we're the dumb ones??"
     mo "You just accused someone of murder with no evidence, and you're acting like it's concrete info!"
     mo "And I heard you wanna be a journalist; not the best look if you're making biased accusations before you've even gotten your name professionally printed."
@@ -1876,6 +1922,7 @@ label cliff_party_text:
 
     mo "Yeah, your biased gut!"
 
+    show cl cockycos
     cl "It's not biased for me to say she's the prime suspect, because it's true!"
     cl "There are only so many things that could've happened to Mia, and they all involve one common denominator."
 
@@ -1884,6 +1931,7 @@ label cliff_party_text:
     cl "You."
     cl "Something happened and you were the only one there to see it."
     cl "I have no idea as to why you'd stay silent, unless you were guilty."
+    show ra sadcos
     cl "You're probably trying to protect yourself, huh?"
     cl "You don't care who suffers so long as you stay out of bars."
 
@@ -1891,21 +1939,27 @@ label cliff_party_text:
     mo "You have no idea what losing Mia did to Rachel!"
     mo "You weren't even there, dumbass!"
 
+    show cl eyerollcos
     cl "No, but I don't need to have been there."
     cl "I've learned that word travels quick in this town."
     cl "So I couldn't help but pick up on the fact that Rachel got held back a year."
 
+    show ra shockedcos
     "Rachel stiffens, but Monique holds strong."
 
     mo "So? What's that got to do with anything?"
 
+    show ra sadcos
+    show cl defaultcos
     cl "Well, there had to have been a reason, right?"
     cl "Someone as supposedly smart as Rachel doesn't get held back a year for failing classes, no."
     cl "It had to have been for something much more sinister."
     cl "And, people do say that she vanished for the rest of her freshman year, after Mia disappeared."
+    show cl sneercos
     cl "My guess, and this seems to be the common theory, is that Rachel spent some time in a mental hospital-"
     cl "-being treated for whatever illness caused her to murder her closest friend."
 
+    show mo concerncos
     "Silence."
 
     mo "Orrrrr, she switched to home schooling, but failed and had to come back to public school?"
@@ -1913,34 +1967,46 @@ label cliff_party_text:
 
     "Cliff throws his hands up in defense."
 
+    show cl defaultcos
     cl "Hey, it's your choice if you wanna die on this hill."
     cl "You might end up like Mia, but hey, just another baseless assumption."
 
+    show mo angrycos
     mo "I can't believe you said that!"
     mo "You're so gross, maybe you should spend some time in a mental hospital yourself!"
 
+    show cl sneercos
     cl "You aren't denying it."
 
     mo "I didn't think I had to, you're being stupid right now!"
 
+    "Rachel finally speaks up."
+
+    show ra defaultcos
     ra "Moni, it's fine."
     ra "It's not like he's known for being the most logical, anyway."
 
+    show mo gentlecos
     mo "Ugh, you're right."
 
+    show cl cockycos
     cl "Ladies, ladies."
     cl "Please, don't argue over me."
     cl "I'm sure I can help you come to a reasonable conclusion."
     cl "One that is preferably in my best interest."
 
+    show ra smilecos
     ra "Oh, we weren't arguing."
 
+    show cl eyerollcos
     cl "Y-you weren't?"
 
+    show mo concerncos
     mo "Um, no."
     mo "And especially not over you."
 
     cl "..."
+    show cl defaultcos
     cl "Well!"
     cl "I better be off, then."
     cl "Duty calls, you know."
@@ -1951,21 +2017,32 @@ label cliff_party_text:
 
     cl "Toodles!"
 
+    hide cl with moveoutright
     "They both watch as he skips away, his cardboard costume jostling other party-goers from how clunky it was."
 
     "Once he disappears into the crowd, they turn to face one another."
 
+    hide mo with moveoutleft
+    show mo gentlecos at Transform(xzoom=1.0) with moveinright:
+        xpos 0.65
+        ypos 0.15
+
     mo "So...at least that's over, right?"
+    show mo angrycos
     mo "Ugh, the nerve of that guy!"
     mo "Claiming you were in a mental hospital, of all places."
 
+    show ra smilecos
     ra "It's alright, he wasn't entirely off anyway."
     ra "Um, he was mostly wrong, though."
+    show ra defaultcos
     ra "I'm just...tired, I think."
     ra "Of being here, I mean."
     ra "Everyone keeps jumping to conclusions, pointing fingers at me."
+    show ra sadcos
     ra "It feels fresh all over again."
 
+    show mo gentlecos
     mo "Hey, it's okay, you don't have to talk about it."
     mo "I understand."
     mo "Let's head out, okay?"
@@ -1975,22 +2052,29 @@ label cliff_party_text:
 label cliff_party_2:
     "Say it ain't so."
 
+    show cl defaultcos at posRight
+
     cl "So, you decided to show your face around here."
 
     "This...cannot be."
 
+    show ra frowncos
     "First Celine sees her here, and now Cliff?!"
 
+    show cl cockycos
     cl "Actually, you technically didn't decide to show your face."
     cl "Pretty sure that was an accident on your behalf."
     cl "Regardless, it was dumb."
     cl "And so are you."
 
+    show ra defaultcos
     ra "Cliff...there's no way you're actually here."
     ra "I must be imagining things."
 
+    show cl sneercos
     cl "HA!"
     cl "Thankfully, you aren't."
+    show cl defaultcos
     cl "Someone as amazing as me can't be conjured up by the feeble-minded mortal brain."
     cl "I am an enigma."
 
@@ -1998,15 +2082,18 @@ label cliff_party_2:
 
     "Already, Rachel's main solace has slipped away."
 
+    show ra frowncos
     ra "Uhhh sure dude."
     ra "Listen, I'm already having a crappy night, so just do me a favor and ease off the gloating, okay?"
 
-    "Cliff snorts from amusement, but the noise sounded less like a snort and more like a blender trying to slice something way too big for the blades."
+    "Cliff snorts from amusement, but the noise sounded less like a snort and more like something got stuck in the blender."
 
     cl "You? A favor?"
+    show cl cockycos
     cl "Don't make me laugh."
     cl "Rachel, I think you've forgotten, but favors are for people who somewhat like each other."
     cl "Us?"
+    show cl eyerollcos
     cl "We haven't even spoken since last year."
 
     if sendText == True:
@@ -2014,60 +2101,78 @@ label cliff_party_2:
 
     cl "You know, when you dumped me."
 
+    show ra defaultcos
     ra "Oh, you're still hung up on that?"
     ra "I thought you'd be over it by now."
 
+    show cl cockycos
     cl "Well, yes, I am."
     cl "After all, I have many a maiden flocking towards me at all times."
     cl "But that's besides the point."
+    show cl eyerollcos
     cl "You still dumped me two days before the junior prom."
     cl "Talk about shady."
 
+    show ra frowncos
     "Rachel pinches her brow bone."
 
     ra "Yeah, I dumped you before prom-"
     ra "-because I found out that you were only dating me because you thought it'd get you info on the missing person's case."
 
+    show cl cockycos
     cl "And you wouldn't do the same?"
+    show cl sneercos
     cl "I mean, come ON!"
     cl "I thought you of all people would understand me."
     cl "We both have similar motives."
 
+    show ra defaultcos
     ra "And what makes you think that?"
 
     cl "We both use people to get what we want."
 
+    show ra frowncos
     ra "???"
-    ra "Who is ‘we'???"
+    ra "Who is \"we\"???"
+    show ra sadcos
     ra "I do not do that, that's so...gross."
     ra "Who the hell are you using?"
+    show ra frowncos
     ra "And for what?"
 
     "Cliff places a gloved finger upon Rachel's lips, shushing her. Gross."
 
+    show cl cockycos
     cl "Shhh, I can't reveal all my secrets, can I?"
+    show cl defaultcos
     cl "Ahhh who am I kidding?"
     cl "I'll totally tell you."
     cl "It's Celine."
 
+    show ra shockedcos
     ra "Celine?!"
 
     cl "Yup."
     cl "I'm trying to improve my journalism skills so that I can become head of the school paper."
     cl "What better thing to report on than a missing person's case that went cold, where your girlfriend is the main suspect?"
+    show cl cockycos
     cl "Well, WAS my girlfriend."
     cl "I couldn't really get any good info since you refuse to budge, so I'm going to the next best thing."
+    show cl sneercos
     cl "Who knows? Maybe I'll solve the case before the police?"
     cl "I'll have a whole article dedicated to me!"
     cl "Senior year, go out with a bang, you know?"
 
+    show ra sadcos
     ra "Dude, that's so low."
     ra "She's already in a vulnerable position, and you're just using her for your own need for clout?!"
 
+    show cl eyerollcos
     cl "Uhhh yeah, that's how it works."
     cl "Don't act all righteous now, we both know that charade won't do you any good."
     cl "And besides, I'm pretty sure she's using me too."
     cl "I'm probably the next best thing she can get, besides a detective."
+    show cl defaultcos
     cl "Who knows? Maybe the conspiracy theorists are right and Mia WAS sacrificed to the devil."
     cl "One thing for sure is that I'll figure it out, and I'll be the one to present the info that'll lock you behind bars forever."
 
@@ -2077,14 +2182,17 @@ label cliff_party_2:
     cl "Speaking of Celine, I gotta find her."
     cl "There's some intel I need to share with her."
 
+    show ra frowncos
     ra "Ugh, she's over by the snack table."
     ra "She's in a pissy mood though, I don't recommend you go over there."
 
+    show cl cockycos
     cl "Oh yeah?"
     cl "How come?"
 
     ra "We had a chat, and she isn't the happiest person in the world, knowing her nemesis is in her house, crashing her party."
 
+    show cl defaultcos
     cl "Wait, you're serious?"
     cl "Celine SAW you?"
     cl "And you guys spoke?!"
@@ -2097,8 +2205,10 @@ label cliff_party_2:
     cl "This could be a great source of intel!"
     cl "You probably slipped up and said something incriminating, in which case I need her to tell me while it's fresh!"
 
+    show ra shockedcos
     ra "Hey, that's-!"
 
+    show cl sneercos
     cl "Ya snooze ya loose, Rachel!"
 
     "Off he goes."

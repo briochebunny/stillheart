@@ -45,11 +45,11 @@ label splashscreen:
 #     xpos 800           
 #     ypos 100  
 
-transform moveinleft:
+transform posLeft:
     xpos -0.05
     ypos 0.2
 
-transform moveinright:
+transform posRight:
     xpos 0.65
     ypos 0.15
 
@@ -111,13 +111,14 @@ label rachels_bedroom_start:
 
     "All this movement seems to be getting on the redhead's nerves, as she furrows her brow in discomfort. Her eyes remain shut."
 
-    show ra default at moveinleft
+    show ra default at posLeft with moveinleft
 
     ra "Moni, your sweater keeps tickling my arm hair."
 
     "Monique, the brunette, shifts a bit to the right to give her friend some much needed space."
 
-    show mo concern at moveinright
+    show mo concern at posRight with moveinright
+
 
     mo "Whoops, sorry, Rach."
 
@@ -335,11 +336,12 @@ label halloween_party:
 
     "Rachel's anxiety is made noticeable by Monique, who offers a small smile of sympathy."
 
-    show mo concerncos at moveinright
+    show mo concerncos at posRight
+
     mo "Hey, you don't look too hot."
     mo "It's not too late for us to turn back."
 
-    show ra timidcos at moveinleft
+    show ra timidcos at posLeft
     ra "No, we're already here."
     ra "And, it's fine, really."
     ra "My costume hides most of my defining features, so I doubt anyone will notice me."
@@ -425,11 +427,12 @@ label halloween_party:
 
     "This party just went from a 0 to a 3."
 
-    show mo defaultcos at moveinright
+    show mo defaultcos at posRight
+
     
     mo "Oh my God, Rach!! They have glowsticks!"
 
-    show ra defaultcos at moveinleft
+    show ra defaultcos at posLeft
 
 
     "Pulling her attention back to Monique, Rachel peers up from under her hood, and notices that people had different colored glowstick wristbands."
@@ -679,11 +682,12 @@ label halloween_party:
     if sendText == False:
         "As people rush by her in a blur, Rachel is able to make out a sparkly green costume heading towards her, squeezing past the traffic."
 
-    show mo concerncos at moveinright
+    show mo concerncos at posRight
+
 
     mo "What's with the commotion?"
 
-    show ra defaultcos at moveinleft
+    show ra defaultcos at posLeft
 
     ra "Maybe the party is over?"
 
@@ -891,7 +895,7 @@ label celine_party:
     scene bg partyinterior
     with wipeleft
 
-    show ra defaultcos at moveinleft
+    show ra defaultcos at posLeft
 
     "Making her way back to the snack table, Rachel makes sure to keep her head down."
 
@@ -908,7 +912,8 @@ label celine_party:
 
     "Oh no."
 
-    show ce worrycos at moveinright
+    show ce worrycos at posRight
+
     
     ce "Oh my gosh, I'm so sorry!!"
 
@@ -1589,7 +1594,7 @@ label cliff_party:
 
     "She doesn't even have time to react before it pounces, sending her to the ground as it licks her face, tail creating an afterimage from the sheer speed of its wagging."
 
-    show ra timidcos at moveinleft
+    show ra timidcos at posLeft
         # xpos -0.05
         # ypos 0.2
     ra "Aww, hey buddy!"
@@ -1644,7 +1649,8 @@ label cliff_party:
 
     "There's no way."
 
-    show cl sneercos at moveinright
+    show cl sneercos at posRight
+
 
     cl "Well well well well well well well."
     cl "Well."

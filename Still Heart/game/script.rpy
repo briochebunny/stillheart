@@ -70,6 +70,9 @@ transform posRight:
     xpos 0.65
     ypos 0.15
 
+transform cliffsFuckassSpecialFunction:
+    xpos 0.60
+    ypos 0.15
 
 
 # The game starts here.
@@ -758,7 +761,11 @@ label halloween_party:
 
     ra "Is that-?"
 
-    show mi partydark with dissolve
+    transform miaCenter:
+        xpos 0.30
+        ypos 0.15
+
+    show mi partydark at miaCenter with dissolve
     "There stands Mia before the crowd."
 
     "She is as beautiful as ever, even in this decrepit state she finds herself in."
@@ -913,7 +920,7 @@ label celine_party:
     scene bg partyinterior
     with wipeleft
 
-    show ra defaultcos at posLeft
+    show ra defaultcos at posLeft with moveinleft
 
     "Making her way back to the snack table, Rachel makes sure to keep her head down."
 
@@ -1164,7 +1171,7 @@ label celine_party:
     show ce eyerollcos
     ce "-knowing how I feel about you."
     ce "How EVERYBODY feels about you..."
-    show celine_party angrycos
+    show ce angrycos
     ce "It's like you don't even care about how others feel."
     ce "You'd rather make everyone else uncomfortable as long as you get what you want."
     ce "I'd tell you to get the hell out of my house, but I don't wanna be a bad host-"
@@ -1673,7 +1680,7 @@ label cliff_party:
 
     "There's no way."
 
-    show cl sneercos at posRight
+    show cl sneercos at cliffsFuckassSpecialFunction with moveinright
 
 
     cl "Well well well well well well well."
@@ -1883,10 +1890,11 @@ label cliff_party:
 label cliff_party_text:
     "Before Cliff can finish that train of thought, they're both intercepted by a voice cutting through the noise."
 
-    show mo concerncos at celinepartyright with moveinright
-    show ra shockedcos
     show cl eyerollcos with moveinright:
-        xpos 0.5
+        xpos 0.4
+    show mo concerncos at celinepartyright with moveinright
+    
+    show ra shockedcos
     
     mo "There you are!"
     mo "I got your text, is every-"
@@ -1896,7 +1904,7 @@ label cliff_party_text:
     mo "Oh, great."
     mo "It's this guy again."
     hide mo with moveoutright
-    show cl at celinepartyright with moveoutright
+    show cl at cliffsFuckassSpecialFunction with moveoutright
     show mo gentlecos at Transform(xzoom=-1.0) with moveinleft:
         xpos -0.05
         ypos 0.15
@@ -2041,6 +2049,7 @@ label cliff_party_text:
     "Once he disappears into the crowd, they turn to face one another."
 
     hide mo with moveoutleft
+    show ra smilecos at posLeft with moveinleft
     show mo gentlecos at Transform(xzoom=1.0) with moveinright:
         xpos 0.65
         ypos 0.15
@@ -2070,7 +2079,7 @@ label cliff_party_text:
 label cliff_party_2:
     "Say it ain't so."
 
-    show cl defaultcos at posRight
+    show cl defaultcos at cliffsFuckassSpecialFunction with moveinright
 
     cl "So, you decided to show your face around here."
 

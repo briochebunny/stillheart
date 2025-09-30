@@ -1,4 +1,5 @@
-﻿# The script of the game goes in this file.
+﻿$ quick_menu = True
+# The script of the game goes in this file.
 
 define celineFirst = False
 define cliffFirst = False
@@ -38,10 +39,16 @@ init python:
 image splash = "images/spooktober logo.png"
 image endcreds = "images/thanks for playing.png"
 
+#disables click for whatever screen its called on
+screen noclick(): #maybe add this too 
+    zorder 1000
+    $ preferences.afm_enable = True
+
 # adding a splash screen
 label splashscreen:
     $ renpy.music.set_volume(0.5)
 
+    show screen noclick
     scene black
     with Pause(1.0)
 
@@ -51,6 +58,8 @@ label splashscreen:
     scene black with dissolve
     with Pause(1.0)
 
+    hide screen noclick
+    $ preferences.afm_enable = False
     return
 
 # Sprite Positions -Arthur
@@ -347,7 +356,7 @@ label halloween_party:
     "They are not places for fun."
 
     $ renpy.music.set_audio_filter("music", walkie_talkie_af, replace=True)
-    play music "Rattled.wav" volume 0.5 fadein 1.0
+    play music "Rattled.wav" volume 1.0 fadein 1.0
     scene bg partyexterior
     with fadeLong
 
@@ -726,6 +735,7 @@ label halloween_party:
 
     scene bg partyporch
     with fadeLong
+    $ preferences.afm_enable = False #forcibly disabling autoplay bc i am ANNOYED!!
 
     "It's no surprise that people are crowding around the door, both indoors and out, making it difficult for Rachel and Monique to get a good view of whatever everyone's doing."
 
@@ -778,8 +788,10 @@ label halloween_party:
     jump endcredits
 
 label endcredits:
+    $ quick_menu = False
     $ renpy.music.set_volume(0.5)
 
+    show screen noclick
     scene black
     with Pause(3.0)
 
@@ -790,6 +802,8 @@ label endcredits:
     scene black with dissolve
     with Pause(3.0)
 
+    hide screen noclick
+    $ preferences.afm_enable = False 
     return
 
 
@@ -937,8 +951,7 @@ label celine_party:
 
     "Oh no."
 
-    show ce worrycos at posRight
-
+    show ce worrycos at posRight with moveinright
     
     ce "Oh my gosh, I'm so sorry!!"
 

@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 40: Line is indented, but the preceding default statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    screen textbox_buttons:
-    ^
+File "game/script.rpy", line 348: Indentation mismatch.
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Mon Sep 29 18:50:57 2025
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Tue Sep 30 09:46:43 2025

@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 348: Indentation mismatch.
+File "game/script.rpy", line 22: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    init python:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Tue Sep 30 09:46:43 2025
+Tue Sep 30 15:33:37 2025

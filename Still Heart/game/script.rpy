@@ -18,27 +18,28 @@ define cl = Character("Cliff")
 define ce = Character("Celine")
 define mi = Character("Mia")
 
+# commenting out the loop image predictions since the game is relatively short and its just for the demo :)
 init python:
-    #image predictions -Arthur
-    # in the full game it's advised to predict only the used assets with each labels to prevent lag
-    def preload_images(img_list):
-        for img in img_list:
-            renpy.start_predict(img)
+#     #image predictions -Arthur
+#     # in the full game it's advised to predict only the used assets with each labels to prevent lag
+#     def preload_images(img_list):
+#         for img in img_list:
+#             renpy.start_predict(img)
 
-    def stop_preloading(img_list):
-        for img in img_list:
-            renpy.stop_predict(img)
+#     def stop_preloading(img_list):
+#         for img in img_list:
+#             renpy.stop_predict(img)
 
-    # images_to_preload = [
-    #     # USED sprites
-    #     "ra default", "ra defaultcos", "ra frown", "ra frowncos", "ra sad", "ra sadcos", "ra shocked", "ra shockedcos", "ra smile", "ra smilecos", "ra timid", "ra timidcos",
-    #     "mo angry", "mo angrycos", "mo concern", "mo concerncos", "mo default", "mo defaultcos", "mo gentle", "mo gentlecos", "mo smile", "mo smilecos",
-    #     "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    #     # BGs
-    #     "bg partyexterior", "bg partyinterior", "bg partyporch", "bg rachelsbedroom",
-    #     # covers/splashes
-    #     "itchMainCover", "spooktober logo", "thanks for playing"
-    # ]
+    images_to_preload = [
+        # USED sprites
+        "ra default", "ra defaultcos", "ra frown", "ra frowncos", "ra sad", "ra sadcos", "ra shocked", "ra shockedcos", "ra smile", "ra smilecos", "ra timid", "ra timidcos",
+        "mo angry", "mo angrycos", "mo concern", "mo concerncos", "mo default", "mo defaultcos", "mo gentle", "mo gentlecos", "mo smile", "mo smilecos",
+        "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+        # BGs
+        "bg partyexterior", "bg partyinterior", "bg partyporch", "bg rachelsbedroom",
+        # covers/splashes
+        "itchMainCover", "spooktober logo", "thanks for playing"
+    ]
 
 
 image splash = "images/spooktober logo.png"
@@ -51,7 +52,6 @@ screen noclick(): #maybe add this too
 
 # adding a splash screen
 label splashscreen:
-    $ preload_images(["spooktober logo"])
     $ renpy.music.set_volume(0.5)
 
     show screen noclick
@@ -92,6 +92,7 @@ transform cliffsFuckassSpecialFunction:
 
 # The game starts here.
 label start:
+    $ renpy.start_predict(images_to_preload)
     "Ah. There you are. I can see you clearly now."
 
     "Welcome, welcome. Please, get comfortable."
@@ -120,8 +121,8 @@ label start:
 
 label rachels_bedroom_start:
     # predictions babey
-    $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
-    "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
+    # $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
+    # "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -340,12 +341,12 @@ label rachels_bedroom_start:
     
 label halloween_party:
     
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     scene bg black
     with fadeLong
 
@@ -804,7 +805,7 @@ label halloween_party:
     jump endcredits
 
 label endcredits:
-    $ preload_images(["thanks for playing"])
+    # $ preload_images(["thanks for playing"])
     $ quick_menu = False
     $ renpy.music.set_volume(0.5)
 
@@ -827,8 +828,8 @@ label endcredits:
 
 
 label rachbedroom_insist_mo_goes:
-    $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
-    "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
+    # $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
+    # "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
     show ra smile
     ra "No, you should go."
     ra "Forget about me for a second. Do what feels good to you."
@@ -855,8 +856,8 @@ label rachbedroom_insist_mo_goes:
     return
 
 label rachbedroom_disuade_mo:
-    $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
-    "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
+    # $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
+    # "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
     show ra sad
     ra "Hey...I'm sure it'll be super boring anyway."
     ra "It's not like they've got anything that you don't already have."
@@ -902,8 +903,8 @@ label rachbedroom_disuade_mo:
     return
 
 label rachbedroom_ra_fine:
-    $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
-    "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
+    # $ preload_images(["ra default", "ra frown", "ra sad", "ra shocked", "ra smile", "ra timid",
+    # "mo angry", "mo concern", "mo default", "mo gentle", "mo smile", "bg rachelsbedroom"])
     show ra timid
     ra "You know what? I'll be fine."
     ra "Why don't you tell me what it's like after?"
@@ -948,12 +949,12 @@ label rachbedroom_ra_fine:
 
 
 label celine_party:
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     scene bg partyinterior
     with wipeleft
 
@@ -1287,12 +1288,12 @@ transform celinepartyright:
     ypos 0.15
 
 label celine_party_text:
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     "Before Celine can respond, a familiar voice breaks through all the noise."
 
     show mo concerncos at celinepartyright with moveinright
@@ -1421,12 +1422,12 @@ label celine_party_text:
     return
 
 label celine_party_2:
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     show ra frowncos
     "Damnit."
 
@@ -1650,12 +1651,12 @@ label celine_party_2:
 
 
 label cliff_party:
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     scene bg partyinterior
     with wipeleft
 
@@ -1942,12 +1943,12 @@ label cliff_party:
     return
 
 label cliff_party_text:
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     "Before Cliff can finish that train of thought, they're both intercepted by a voice cutting through the noise."
 
     show cl eyerollcos with moveinright:
@@ -2137,12 +2138,12 @@ label cliff_party_text:
 
 
 label cliff_party_2:
-    $ preload_images([
-    "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
-    "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
-    "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
-    # BGs
-    "bg partyexterior", "bg partyinterior"])
+    # $ preload_images([
+    # "ra defaultcos", "ra frowncos", "ra sadcos", "ra shockedcos", "ra smilecos", "ra timidcos",
+    # "mo angrycos", "mo concerncos", "mo defaultcos", "mo gentlecos", "mo smilecos",
+    # "mi partydark", "mi partylight", "cl defaultcos", "cl cockycos", "cl eyerollcos", "cl sneercos", "ce angrycos", "ce defaultcos", "ce eyerollcos", "ce neutralcos", "ce smilecos", "ce sneercos", "ce worrycos",
+    # # BGs
+    # "bg partyexterior", "bg partyinterior"])
     "Say it ain't so."
 
     show cl defaultcos at cliffsFuckassSpecialFunction with moveinright

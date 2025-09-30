@@ -5,7 +5,7 @@
         "**/*.rpymc": true,
         "**/cache/": true
     },
-    "renpyWarp.sdkPath": "c:\\Users\\toast\\Downloads\\renpy-8.3.4-sdk",
+    "renpyWarp.sdkPath": "c:/Users/espam/AppData/Roaming/Code/User/globalStorage/paisleysoftworks.renpywarp/file-downloader-downloads/8.4.1",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
